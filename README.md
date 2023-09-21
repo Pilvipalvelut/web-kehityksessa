@@ -6,7 +6,7 @@ Tämä GitHub-repositorio sisältää Haaga-Helian Pilvipalvelut web-kehityksess
 
 Opintojaksolla opiskelija jalostaa valitusta aiheesta omaa digitaalista palvelua.
 Opiskelija hyödyntää pilvipalvelutarjoajien ns. NoCode ja LowCode-palveluita oman digitaalisen palvelun rakentamisessa. 
-Erityisesti keskitytään autentikoinnin, tiedon varastoinnin ja analytiikan tekniikoihin ja palveluihin.
+Erityisesti keskitytään autentikoinnin, tiedon varastoinnin ja analytiikan tekniikoihin ja pilvestä löytyviin palveluihin.
 
 Kurssin suoritettuaan opiskelija ymmärtää ongelman ratkaisemiseen tarvittavia web-kehittäjän taitoja. Hän kykenee kuvaamaan tarpeita ja ehdottamaan niihin soveltuvia pilvipalveluita. Hän osaa itsenäisesti lisätä osaamistaan uusista palveluista. 
 
