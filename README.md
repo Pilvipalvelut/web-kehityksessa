@@ -29,4 +29,4 @@ Kurssin laajuus on 5 opintopistettä, eli noin 135 tuntia. Kurssin aikana viikoi
 
 ------
 
-Tämän sivuston ovat kehittäneet Ismo Harjunmaa ja Teemu Havulinna. Materiaali pohjautuu osittain Ohto Rainion kurssimateriaaleihin.
+Tämän sivuston on kehittänyt Ismo Harjunmaa. Materiaali pohjautuu osittain Teemu Havulinnan ja Ohto Rainion kurssimateriaaleihin.
