@@ -10,8 +10,8 @@ Erityisesti keskitytään web-kehityksen tarpeisiin kuten autentikoinnin ja anal
 
 Kurssin suoritettuaan opiskelija ymmärtää ongelman ratkaisemiseen tarvittavia web-kehittäjän taitoja. Hän kykenee kuvaamaan tarpeita ja ehdottamaan niihin soveltuvia pilvipalveluita. Hän osaa itsenäisesti lisätä osaamistaan uusista palveluista. 
 
-Kurssin arviointi perustuu yksilötyöskentelyyn.
-Ohjelmistokehityksen teknologioita -kurssi toimii osin tämän kurssin teknisenä tukikurssina. Suosittelemme hyödyntämään kyseisellä kurssilla käsiteltyjä aiheita, kuten testausta ja jatkuvaa integraatiota.
+Kurssin arviointi perustuu yksilötyöskentelyyn. Tutustu [opintojaksokuvaukseen](https://opinto-opas.haaga-helia.fi/course_unit/DIG001AS3A) myös Haaga-Helian opinto-oppaassa.
+Digitekniikat -opintojakso tai vastaava osaaminen on tämän opintojakson edeltävyysvaatimuksena.
 
 ## Aiemmin hankitun osaamisen tunnistaminen (AHOT/RPL)
 
