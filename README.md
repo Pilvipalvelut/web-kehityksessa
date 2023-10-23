@@ -13,7 +13,7 @@ Kurssin suoritettuaan opiskelija ymmärtää ongelman ratkaisemiseen tarvittavia
 Kurssin arviointi perustuu yksilötyöskentelyyn. Tutustu [opintojaksokuvaukseen](https://opinto-opas.haaga-helia.fi/course_unit/DIG001AS3A) myös Haaga-Helian opinto-oppaassa.
 Digitekniikat -opintojakso tai vastaava osaaminen on tämän opintojakson edeltävyysvaatimuksena.
 
-Opintojakson aikana tehdään [tehtäviä](https://github.com/Pilvipalvelut/web-kehityksessa/blob/main/tehtavat.md) sekä isompi soveltava harjoitustyö.
+Opintojakson aikana tehdään [tehtäviä](https://github.com/Pilvipalvelut/web-kehityksessa/blob/main/tehtavat.md) sekä isompi soveltava [harjoitustyö](https://github.com/Pilvipalvelut/web-kehityksessa/blob/main/harjoitustyo.md).
 
 ## Aiemmin hankitun osaamisen tunnistaminen (AHOT/RPL)
 
