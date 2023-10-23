@@ -1,8 +1,8 @@
-## Opintojakson tehtävät
+## Kurssin tehtävät
 
-Arviointi: oppimistehtävät 60 % ja oma soveltava tehtävä 40 %.
+Arviointi: oppimistehtävät 60 % ja oma soveltava harjoitustyö 40 %.
 
-Kurssilla on 7 oppimistehtävää, yksi tehtävä / lähiopetusviikko ja jokaisen viikon tehtävä palautetaan seuraavan viikon tunteihin mennessä. Tehtävien palautuspäivämäärä on kuluvan viikon sunnuntai klo 22. Myöhässä oppimistehtäviä voi palauttaa, kaavalla 10% vähennystä / viikko. Joidenkin tehtävien kohdalla käymme tehtävän haasteellisia kohtia läpi seuraavalla tunnilla ja opintojakson päätteeksi myös mallivastaukset tulevat näkyville. Yhdestä oppimistehtävästä saa max 6 p.  Yhteensä siis 7 x 6 p = 42 p.
+Kurssilla on 7 oppimistehtävää, yksi tehtävä / lähiopetusviikko ja jokaisen viikon tehtävä palautetaan seuraavan viikon tunteihin mennessä. Tehtävien palautuspäivämäärä on kuluvan viikon sunnuntai klo 22. Myöhässä oppimistehtäviä voi palauttaa, mutta niistä vähennetään pisteitä kaavalla 10% vähennystä / viikko. Joidenkin tehtävien kohdalla käymme tehtävän haasteellisia kohtia läpi seuraavalla tunnilla ja opintojakson päätteeksi myös mallivastaukset tulevat näkyville. Yhdestä oppimistehtävästä saa max 6 p.  Yhteensä siis 7 x 6 p = 42 p.
 
 Harjoitustyöstä saa parhaimmillaan 30 p ja se palautetaan opintojakson loppuun mennessä.
 
