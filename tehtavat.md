@@ -31,16 +31,7 @@ GitHub pages -sivuston rakentaminen
 - Paina repositryn juuressa _Create new file_-painiketta
 - Nimeä tiedosto nimellä _index.html_, joka on aloitussivun nimi
 - Lisää tiedostoon tarvittavat sisällöt, esimerkiksi:
-  ´´´<!DOCTYPE html>
-<html>
-<head>
-    <title>Minun GitHub Pages Sivuni</title>
-</head>
-<body>
-    <h1>Tervetuloa GitHub Pagesiin!</h1>
-    <p>Tämä on ensimmäinen GitHub Pages -sivusi.</p>
-</body>
-</html>´´´
+
 - Siirry repositoryn asetuksiin _Settings_, jossa määritellään GitHub Pages-sivuston asetukset
 - Valitse asetukset-sivulla julkaistavaksi _main_ branch ja julkaise sivusto
 - Tarkista toisella selaimella tai incognito-tilassa miltä sivusto näyttää muille käyttäjille. Sivusto on osoitteessa: https://kayttajanimi.github.io/repositoryn-nimi
