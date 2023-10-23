@@ -18,7 +18,7 @@ Opintojakson aikana tehdään [tehtäviä](https://github.com/Pilvipalvelut/web-
 ## Aiemmin hankitun osaamisen tunnistaminen (AHOT/RPL)
 
 Jos olet hankkinut tämän opintojakson mukaisen osaamisen työsi kautta, voit osoittaa osaamisesi tavanomaisen osallistumisen sijasta AHOT-menettelyllä. Osaamisen tunnistamiseksi ilmoittaudu tälle kurssille normaalisti, ja ole yhteydessä kurssin opettajiin AHOT-järjestelyjen osalta viimeistään kurssin ensimmäisen viikon aikana.
-Tarkemmat ohjeet AHOT-käytäntöjen suhteen löydät...
+Tarkemmat ohjeet AHOT-käytäntöjen suhteen löydät [täältä](https://github.com/Pilvipalvelut/web-kehityksessa/blob/main/ahot.md).
 
 # Kurssin aikataulu (syksy 2023)
 
