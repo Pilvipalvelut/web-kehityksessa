@@ -10,5 +10,4 @@ theme: jekyll-theme-minimal
 Jekyllin mallipohja luo sivuston yhdenmukaisen ulkoasun ja rakenteen. Tämä helpottaa sivuston suunnittelua ja mahdollistaa nopean ulkoasun muuttamisen.
 
 ### Responsiivisuus
-Jekyllin ja GitHub Pagesin yhdistäminen mahdollistaa responsiivisen verkkosivuston suunnittelun, joka mukautuu eri laitteiden näyttöihin ja kokoin.
-
+Jekyllin ja GitHub Pagesin yhdistäminen mahdollistaa responsiivisen verkkosivuston suunnittelun, joka mukautuu eri laitteiden näyttöihin ja kokoihin.
