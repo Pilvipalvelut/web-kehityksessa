@@ -31,7 +31,8 @@ GitHub pages -sivuston rakentaminen
 - Paina repositryn juuressa _Create new file_-painiketta
 - Nimeä tiedosto nimellä _index.html_, joka on aloitussivun nimi
 - Lisää tiedostoon tarvittavat sisällöt, esimerkiksi:
-~~~<!DOCTYPE html>
+~~~
+<!DOCTYPE html>
 <html>
 <head>
     <title>GitHub Pages Sivuni</title>
@@ -47,3 +48,45 @@ GitHub pages -sivuston rakentaminen
 - Tarkista toisella selaimella tai incognito-tilassa miltä sivusto näyttää muille käyttäjille. Sivusto on osoitteessa: https://kayttajanimi.github.io/repositoryn-nimi
 
 #### 1.4. Luo sivustolle CSS-tiedosto, johon viittaat HTML-sivuista
+- Tee samaan tapaan kuin edellisessä kohdassa uusi tiedosto
+- Nimeä tiedosto nimellä _styles.css_ ja laita tarvittavat sisällöt, esimerkiksi:
+~~~
+body {
+    background-color: #d2e2f2;
+    font-family: Roboto, sans-serif;
+}
+
+h1 {
+    color: #333;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+~~~
+- Tallenna CSS-tiedosto
+- Tee muutos HTML-sivulle, jotta määrittämäsi tyylitiedosto tulee käyttöön
+~~~
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+~~~
+
+### 2. Tehtävä
+TBD
+
+### 3. Tehtävä
+TBD
+
+### 4. Tehtävä
+TBD
+
+### 5. Tehtävä
+TBD
+
+### 6. Tehtävä
+TBD
+
+### 7. Tehtävä
+TBD
