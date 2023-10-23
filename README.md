@@ -4,20 +4,20 @@ Tämä GitHub-repositorio sisältää Haaga-Helian Pilvipalvelut web-kehityksess
 
 ## Kurssin sisältö
 
-Opintojaksolla opiskelija jalostaa valitusta aiheesta omaa digitaalista palvelua.
+Kurssilla opiskelija jalostaa valitusta aiheesta omaa digitaalista palvelua.
 Opiskelija hyödyntää pilvipalvelutarjoajien ns. NoCode ja LowCode-palveluita oman digitaalisen palvelun rakentamisessa. 
 Erityisesti keskitytään web-kehityksen tarpeisiin kuten autentikoinnin ja analytiikan tekniikoihin, mutta myös tiedonvarastointiin valmiilla pilvestä löytyvillä palveluilla.
 
 Kurssin suoritettuaan opiskelija ymmärtää ongelman ratkaisemiseen tarvittavia web-kehittäjän taitoja. Hän kykenee kuvaamaan tarpeita ja ehdottamaan niihin soveltuvia pilvipalveluita. Hän osaa itsenäisesti lisätä osaamistaan uusista palveluista. 
 
 Kurssin arviointi perustuu yksilötyöskentelyyn. Tutustu [opintojaksokuvaukseen](https://opinto-opas.haaga-helia.fi/course_unit/DIG001AS3A) myös Haaga-Helian opinto-oppaassa.
-Digitekniikat -opintojakso tai vastaava osaaminen on tämän opintojakson edeltävyysvaatimuksena.
+Digitekniikat -opintojakso tai vastaava osaaminen on tämän kurssin edeltävyysvaatimuksena.
 
-Opintojakson aikana tehdään [tehtäviä](https://github.com/Pilvipalvelut/web-kehityksessa/blob/main/tehtavat.md) sekä isompi soveltava [harjoitustyö](https://github.com/Pilvipalvelut/web-kehityksessa/blob/main/harjoitustyo.md).
+Kurssin aikana tehdään [tehtäviä](https://github.com/Pilvipalvelut/web-kehityksessa/blob/main/tehtavat.md) sekä isompi soveltava [harjoitustyö](https://github.com/Pilvipalvelut/web-kehityksessa/blob/main/harjoitustyo.md).
 
 ## Aiemmin hankitun osaamisen tunnistaminen (AHOT/RPL)
 
-Jos olet hankkinut tämän opintojakson mukaisen osaamisen työsi kautta, voit osoittaa osaamisesi tavanomaisen osallistumisen sijasta AHOT-menettelyllä. Osaamisen tunnistamiseksi ilmoittaudu tälle kurssille normaalisti, ja ole yhteydessä kurssin opettajiin AHOT-järjestelyjen osalta viimeistään kurssin ensimmäisen viikon aikana.
+Jos olet hankkinut tämän kurssin mukaisen osaamisen työsi kautta, voit osoittaa osaamisesi tavanomaisen osallistumisen sijasta AHOT-menettelyllä. Osaamisen tunnistamiseksi ilmoittaudu tälle kurssille normaalisti, ja ole yhteydessä kurssin opettajiin AHOT-järjestelyjen osalta viimeistään kurssin ensimmäisen viikon aikana.
 Tarkemmat ohjeet AHOT-käytäntöjen suhteen löydät [täältä](https://github.com/Pilvipalvelut/web-kehityksessa/blob/main/ahot.md).
 
 # Kurssin aikataulu (syksy 2023)
