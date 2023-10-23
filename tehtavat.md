@@ -40,7 +40,8 @@ GitHub pages -sivuston rakentaminen
     <h1>Tervetuloa GitHub Pages-sivustolleni!</h1>
     <p>Tämä on ensimmäinen GitHub Pages -teksti.</p>
 </body>
-</html>~~~
+</html>
+~~~
 - Siirry repositoryn asetuksiin _Settings_, jossa määritellään GitHub Pages-sivuston asetukset
 - Valitse asetukset-sivulla julkaistavaksi _main_ branch ja julkaise sivusto
 - Tarkista toisella selaimella tai incognito-tilassa miltä sivusto näyttää muille käyttäjille. Sivusto on osoitteessa: https://kayttajanimi.github.io/repositoryn-nimi
