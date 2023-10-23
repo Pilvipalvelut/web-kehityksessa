@@ -1,4 +1,4 @@
-## 
+## Opintojakson tehtävät
 
 Arviointi: oppimistehtävät 60 % ja oma soveltava tehtävä 40 %.
 
