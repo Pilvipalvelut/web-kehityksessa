@@ -12,13 +12,13 @@ Etätehtävästä saa max 30 p ja se palautetaan opintojakson loppuun mennessä.
 
 GitHub pages -sivuston rakentaminen
 
-1.1. Rekisteröidy GitHub:in käyttäjäksi
+#### 1.1. Rekisteröidy GitHub:in käyttäjäksi
 - Mene selaimella osoitteeseen: [GitHub Signup](https://github.com/signup)
 - Täytä rekisteröitymistiedot lomakkeella
 - Lue käyttöehdot ja hyväksy
 - GitHub lähettää sähköpostilla vahvistusviestin, jossa on linkki johon täytyy mennä vahvistaaksesi että antamasi sähköpostiosoite on todellinen
 
-1.2. Luo uusi repository 
+#### 1.2. Luo uusi repository 
 - Kirjaudu GitHub-tilillesi osoitteessa [GitHub](https://github.com)
 - Siirry omalle profiilisivullesi oikeassa yläkulmassa olevasta profiili-ikonista
 - Valitse Repositories-välilehti
@@ -26,6 +26,23 @@ GitHub pages -sivuston rakentaminen
 - Täytä tiedot uudesta repositorysta
 - Voit alkuun pitää repositorya Private-näkyvyystilassa kunnes se on valmis. Opintojakson aikana repositoryn tulee kuitenkin olla Public-näkyvyydellä
 
-1.3. Luo sivustolle uusi HTML-sivu
+#### 1.3. Luo sivustolle uusi HTML-sivu
+- Siirry repositoryn juureen eli avaa selaimella tyhjä repository
+- Paina repositryn juuressa _Create new file_-painiketta
+- Nimeä tiedosto nimellä _index.html_, joka on aloitussivun nimi
+- Lisää tiedostoon tarvittavat sisällöt, esimerkiksi:
+  ´´´<!DOCTYPE html>
+<html>
+<head>
+    <title>Minun GitHub Pages Sivuni</title>
+</head>
+<body>
+    <h1>Tervetuloa GitHub Pagesiin!</h1>
+    <p>Tämä on ensimmäinen GitHub Pages -sivusi.</p>
+</body>
+</html>´´´
+- Siirry repositoryn asetuksiin _Settings_, jossa määritellään GitHub Pages-sivuston asetukset
+- Valitse asetukset-sivulla julkaistavaksi _main_ branch ja julkaise sivusto
+- Tarkista toisella selaimella tai incognito-tilassa miltä sivusto näyttää muille käyttäjille. Sivusto on osoitteessa: https://kayttajanimi.github.io/repositoryn-nimi
 
-1.4. Luo sivustolle CSS-tiedosto, johon viittaat HTML-sivuista
+#### 1.4. Luo sivustolle CSS-tiedosto, johon viittaat HTML-sivuista
