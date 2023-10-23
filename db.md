@@ -1,3 +1,8 @@
+## Firebase -tietokanta
+- siirry osoitteeseen: [https://firebase.google.com](https://firebase.google.com)
+- klikkaa Get Started -painiketta
+
+
 CSV-tiedoston datan tuominen PostgreSQL- tai MySQL-tietokantaan on suhteellisen helppoa käyttäen näiden tietokantajärjestelmien tarjoamia työkaluja ja komentoja. Tässä on yksinkertainen vaiheittainen ohje:
 
 **CSV-tiedoston tuonti PostgreSQL-tietokantaan:**
