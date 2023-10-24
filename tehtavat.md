@@ -39,11 +39,10 @@ GitHub pages -sivuston rakentaminen
 </head>
 <body>
     <h1>Tervetuloa GitHub Pages-sivustolleni!</h1>
-    <p>Tämä on ensimmäinen GitHub Pages -teksti.</p>
+    <p class="container">Tämä on ensimmäinen GitHub Pages -teksti.</p>
 </body>
 </html>
 ~~~
-
 
 #### 1.4. Luo sivustolle CSS-tiedosto, johon viittaat HTML-sivuista
 - Tee samaan tapaan kuin edellisessä kohdassa uusi tiedosto
@@ -71,10 +70,11 @@ h1 {
 </head>
 ~~~
 #### 1.5. Muuta repository asetuksia
-- Siirry repositoryn asetuksiin _Settings_, jossa määritellään GitHub Pages-sivuston asetukset
-- Valitse _Settings_-sivun vasemmasta valikosta _Code and automation_ ja _Pages_-välilehti. Välilehdeltä voidaan merkitä julkaistavaksi _main_ branch, joka on ns. default kehityshaara repositoryssa
+- Siirry repositoryn asetuksiin _Settings_, jossa määritellään GitHub Pages-sivuston asetukset. Ks. [kuva1](https://github.com/Pilvipalvelut/web-kehityksessa/blob/main/gh_pages1.png)
+- Valitse _Settings_-sivun vasemmasta valikosta _Code and automation_ ja _Pages_-välilehti. Välilehdeltä voidaan merkitä julkaistavaksi _main_ branch, joka on ns. default kehityshaara repositoryssa. Ks. [kuva2](https://github.com/Pilvipalvelut/web-kehityksessa/blob/main/gh_pages2.png)
 - Kun asetus on oikein tehty sivusto on näkyvillä ja linkki sivustoon tulee _Settings_-sivulle näkyviin
 - Tarkista toisella selaimella tai incognito-tilassa miltä sivusto näyttää muille käyttäjille. Sivusto on osoitteessa: https://kayttajanimi.github.io/repositoryn-nimi
+
 
 ### 2. Tehtävä
 TBD
