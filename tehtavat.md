@@ -43,9 +43,7 @@ GitHub pages -sivuston rakentaminen
 </body>
 </html>
 ~~~
-- Siirry repositoryn asetuksiin _Settings_, jossa määritellään GitHub Pages-sivuston asetukset
-- Valitse asetukset-sivulla julkaistavaksi _main_ branch ja julkaise sivusto
-- Tarkista toisella selaimella tai incognito-tilassa miltä sivusto näyttää muille käyttäjille. Sivusto on osoitteessa: https://kayttajanimi.github.io/repositoryn-nimi
+
 
 #### 1.4. Luo sivustolle CSS-tiedosto, johon viittaat HTML-sivuista
 - Tee samaan tapaan kuin edellisessä kohdassa uusi tiedosto
@@ -72,6 +70,11 @@ h1 {
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 ~~~
+#### 1.5. Muuta repository asetuksia
+- Siirry repositoryn asetuksiin _Settings_, jossa määritellään GitHub Pages-sivuston asetukset
+- Valitse asetukset-sivulla julkaistavaksi _main_ branch
+- Kun asetus on oikein tehty sivusto on näkyvillä ja linkki sivustoon tulee _Settings_-sivulle näkyviin
+- Tarkista toisella selaimella tai incognito-tilassa miltä sivusto näyttää muille käyttäjille. Sivusto on osoitteessa: https://kayttajanimi.github.io/repositoryn-nimi
 
 ### 2. Tehtävä
 TBD
