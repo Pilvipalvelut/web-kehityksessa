@@ -24,7 +24,7 @@ Tarkemmat ohjeet AHOT-käytäntöjen suhteen löydät [täältä](https://github
 
 Kurssista järjestetään syksyllä 2023 ensimmäinen toteutus. Toteutuksen DIG001AS3A-3001 yhteiset tapaamiset järjestetään viikoittain seuraavasti:
 
-2. periodi **maanantaisin klo 17:40-20:30** luokassa 2004 ja Zoomissa.
+2. periodi **maanantaisin klo 17:40-20:30** luokassa **3004** ja Zoomissa.
 
 Kurssin laajuus on 5 opintopistettä, eli noin 135 tuntia. Kurssin aikana viikoittaiseksi työmääräksi tulee noin 17 tuntia. Tulet siis työskentelemään merkittävässä määrin myös yhteisten tapaamisten ulkopuolella.
 
