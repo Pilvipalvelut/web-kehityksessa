@@ -72,7 +72,7 @@ h1 {
 ~~~
 #### 1.5. Muuta repository asetuksia
 - Siirry repositoryn asetuksiin _Settings_, jossa määritellään GitHub Pages-sivuston asetukset
-- Valitse asetukset-sivulla julkaistavaksi _main_ branch
+- Valitse _Settings_-sivun vasemmasta valikosta _Code and automation_ ja _Pages_-välilehti. Välilehdeltä voidaan merkitä julkaistavaksi _main_ branch, joka on ns. default kehityshaara repositoryssa
 - Kun asetus on oikein tehty sivusto on näkyvillä ja linkki sivustoon tulee _Settings_-sivulle näkyviin
 - Tarkista toisella selaimella tai incognito-tilassa miltä sivusto näyttää muille käyttäjille. Sivusto on osoitteessa: https://kayttajanimi.github.io/repositoryn-nimi
 
