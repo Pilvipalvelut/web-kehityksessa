@@ -77,7 +77,13 @@ h1 {
 
 
 ### 2. Tehtävä
-TBD
+Muunna GitHub Pages -sivustosi niin että HTML-sivujen sijaan käytetään md-tiedostoja ja Jekyll-teemaa. Saat lisää tietoa Jekyll-teemojen käyttämisestä [täältä]()
+
+Jekyll-teemoja voi etsiä osoitteista
+- [GitHub Themes](https://pages.github.com/themes/)
+- [Jekyll Themes](https://jekyll-themes.com/)
+
+
 
 ### 3. Tehtävä
 TBD
