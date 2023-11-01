@@ -1,4 +1,5 @@
-Web-sovelluksen autentikointi (tunnistautuminen) on prosessi, jonka avulla käyttäjät voivat todistaa henkilöllisyytensä ja osoittaa, että heillä on lupa käyttää tiettyjä sovelluksen resursseja tai toimintoja. Autentikointi on olennainen osa monia verkkosovelluksia ja verkkopalveluita, ja se auttaa suojaamaan käyttäjien tietoja ja varmistamaan, että vain oikeilla henkilöillä on pääsy tiettyihin resursseihin.
+## Autentikointi
+Autentikointi tai tutummin tunnistautuminen on prosessi, jonka avulla käyttäjät voivat todistaa henkilöllisyytensä ja osoittaa, että heillä on lupa käyttää tiettyjä sovelluksen resursseja tai toimintoja. Autentikointi on olennainen osa verkkosovelluksia ja verkkopalveluita, ja se auttaa suojaamaan käyttäjien tietoja ja varmistamaan, että vain oikeilla henkilöillä on pääsy tiettyihin resursseihin.
 
 Autentikointiprosessi voi sisältää seuraavat vaiheet:
 
