@@ -12,7 +12,7 @@ Kaksivaiheinen tunnistautuminen (2FA tai MFA) on turvallisuuskäytänne, jossa k
 Kaksivaiheinen tunnistautuminen perustuu seuraaviin asioihin:
 1. **Tieto** (knowledge factor): Käyttäjän tiedon varmistaminen, kuten salasanan syöttäminen.
 2. **Omistus** (possession factor): Käyttäjän oman laitteen tai fyysisen esineen käyttäminen vahvistuksena, esimerkiksi mobiilisovelluksen, puhelimen tai turvallisuustokenin avulla.
-3. **Ominaisuus** (inherence factor): Käyttäjän biometriset piirteet, kuten sormenjälki, kasvojentunnistus tai silmänirto, voidaan käyttää vahvistuksena.
+3. **Ominaisuus** (inherence factor): Käyttäjän biometriset piirteet, kuten sormenjälki, kasvojentunnistus tai silmän iiriksen tunnistusta
 
 2FA voi sisältää kertakäyttöisen salasanan (OTP) lähettämisen käyttäjälle eri tavoilla:
 1. **Tekstiviesti (SMS) tai puhelinvahvistus:** Käyttäjälle lähetetään tekstiviestillä tai puhelimitse yksilöllinen koodi, jonka hän syöttää tunnistautuakseen.
@@ -22,7 +22,7 @@ Kaksivaiheinen tunnistautuminen perustuu seuraaviin asioihin:
 Tai jonkin tiedon perusteella, joka on vain käyttäjällä:
 
 4. **Fyysinen turvallisuustoken:** Käyttäjille annetaan fyysinen laite, joka tuottaa yksilöllisiä koodeja.
-5. **Biometriset piirteet:** Käyttäjä voi käyttää sormenjälkeä, kasvojentunnistusta tai silmänirtoa vahvistumiseen.
+5. **Biometriset piirteet:** Käyttäjä voi käyttää sormenjälkeä, kasvojentunnistusta tai silmän iiristä vahvistumiseen.
 
 ### Sessioiden hallinta
 Kun käyttäjä on onnistuneesti tunnistettu, sovellus luo istunnon, joka mahdollistaa käyttäjän vuorovaikutuksen sovelluksen kanssa. Tämä sessio voidaan ylläpitää evästeiden tai istuntoiden avulla.
