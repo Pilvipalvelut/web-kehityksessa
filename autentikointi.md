@@ -20,8 +20,9 @@ Kaksivaiheinen tunnistautuminen perustuu seuraaviin asioihin:
 3. **Sähköposti:** Käyttäjälle lähetetään sähköpostitse vahvistuskoodi.
 
 Tai jonkin tiedon perusteella, joka on vain käyttäjällä:
-5. **Fyysinen turvallisuustoken:** Käyttäjille annetaan fyysinen laite, joka tuottaa yksilöllisiä koodeja.
-6. **Biometriset piirteet:** Käyttäjä voi käyttää sormenjälkeä, kasvojentunnistusta tai silmänirtoa vahvistumiseen.
+
+4. **Fyysinen turvallisuustoken:** Käyttäjille annetaan fyysinen laite, joka tuottaa yksilöllisiä koodeja.
+5. **Biometriset piirteet:** Käyttäjä voi käyttää sormenjälkeä, kasvojentunnistusta tai silmänirtoa vahvistumiseen.
 
 ### Sessioiden hallinta
 Kun käyttäjä on onnistuneesti tunnistettu, sovellus luo istunnon, joka mahdollistaa käyttäjän vuorovaikutuksen sovelluksen kanssa. Tämä sessio voidaan ylläpitää evästeiden tai istuntoiden avulla.
