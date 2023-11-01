@@ -8,7 +8,7 @@ Autentikointiprosessi sisältää seuraavat vaiheet:
 2. **Todentaminen:** Sovellus tarkistaa onko annettu käyttäjätunnus ja salasana oikeat. Jos ne täsmäävät, käyttäjä on onnistuneesti tunnistettu.
 
 ### Kaksivaiheinen varmennus
-Kaksivaiheinen tunnistautuminen (2FA tai MFA) on turvallisuuskäytänne, jossa käyttäjän täytyy syöttää kaksi tai useampia eri tekijöitä todistaakseen henkilöllisyytensä ennen kuin hän saa pääsyn tiettyihin järjestelmiin tai palveluihin. Kaksivaiheista tunnistautumista käytetään laajasti kaikissa yhteyksissä, joissa tarvitaan vahvaa tunnistusta ja henkilöllisyyden varmistamista. Tämä voi sisältää kertakäyttöisen salasanan (OTP) lähettämisen käyttäjän puhelimeen tai sähköpostiin.
+Kaksivaiheinen tunnistautuminen (2FA tai MFA) on turvallisuuskäytänne, jossa käyttäjän täytyy syöttää kaksi tai useampia eri tekijöitä todistaakseen henkilöllisyytensä ennen kuin hän saa pääsyn tiettyihin järjestelmiin tai palveluihin. Kaksivaiheisen tunnistautumisen käyttö riippuu palvelun tai järjestelmän tarpeista ja käyttötarkoituksesta. Se on erityisen suositeltavaa käyttää tilanteissa, joissa on käytetään henkilökohtaisia tietoja ja varmistaa käyttäjien turvallisuus, kuten verkkopankit, sähköpostitilit, sosiaalisen median tilit ja yritysten sisäiset tietojärjestelmät. Tämä voi sisältää kertakäyttöisen salasanan (OTP) lähettämisen käyttäjän puhelimeen tai sähköpostiin.
 Kaksivaiheinen tunnistautuminen perustuu seuraaviin asioihin:
 1. **Tieto** (knowledge factor): Käyttäjän tiedon varmistaminen, kuten salasanan syöttäminen.
 2. **Omistus** (possession factor): Käyttäjän oman laitteen tai fyysisen esineen käyttäminen vahvistuksena, esimerkiksi mobiilisovelluksen, puhelimen tai turvallisuustokenin avulla.
@@ -19,7 +19,6 @@ Kaksivaiheista tunnistautumista voi toteuttaa useilla eri tavoilla:
 3. **Sähköposti:** Käyttäjälle lähetetään sähköpostitse vahvistuskoodi.
 4. **Fyysinen turvallisuustoken:** Käyttäjille annetaan fyysinen laite, joka tuottaa yksilöllisiä koodeja.
 5. **Biometriset piirteet:** Käyttäjä voi käyttää sormenjälkeä, kasvojentunnistusta tai silmänirtoa vahvistumiseen.
-Kaksivaiheisen tunnistautumisen käyttö riippuu palvelun tai järjestelmän tarpeista ja käyttötarkoituksesta. Se on erityisen suositeltavaa käyttää kaikissa tilanteissa, joissa on tärkeää suojata henkilökohtaisia tietoja ja varmistaa käyttäjien turvallisuus, kuten verkkopankit, sähköpostitilit, sosiaalisen median tilit ja yritysten tietojärjestelmät.
 
 ### Sessioiden hallinta
 Kun käyttäjä on onnistuneesti tunnistettu, sovellus luo istunnon, joka mahdollistaa käyttäjän vuorovaikutuksen sovelluksen kanssa. Tämä sessio voidaan ylläpitää evästeiden tai istuntoiden avulla.
