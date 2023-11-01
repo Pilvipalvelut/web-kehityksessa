@@ -13,10 +13,12 @@ Kaksivaiheinen tunnistautuminen perustuu seuraaviin asioihin:
 1. **Tieto** (knowledge factor): Käyttäjän tiedon varmistaminen, kuten salasanan syöttäminen.
 2. **Omistus** (possession factor): Käyttäjän oman laitteen tai fyysisen esineen käyttäminen vahvistuksena, esimerkiksi mobiilisovelluksen, puhelimen tai turvallisuustokenin avulla.
 3. **Ominaisuus** (inherence factor): Käyttäjän biometriset piirteet, kuten sormenjälki, kasvojentunnistus tai silmänirto, voidaan käyttää vahvistuksena.
+
 2FA voi sisältää kertakäyttöisen salasanan (OTP) lähettämisen käyttäjälle eri tavoilla:
 1. **Tekstiviesti (SMS) tai puhelinvahvistus:** Käyttäjälle lähetetään tekstiviestillä tai puhelimitse yksilöllinen koodi, jonka hän syöttää tunnistautuakseen.
 2. **Mobiilisovellukset:** Monet palvelut tarjoavat mobiilisovelluksen, kuten Google Authenticator tai Authy, joka tuottaa satunnaisia koodia, jotka käyttäjä syöttää.
 3. **Sähköposti:** Käyttäjälle lähetetään sähköpostitse vahvistuskoodi.
+
 Tai jonkin tiedon perusteella, joka on vain käyttäjällä:
 5. **Fyysinen turvallisuustoken:** Käyttäjille annetaan fyysinen laite, joka tuottaa yksilöllisiä koodeja.
 6. **Biometriset piirteet:** Käyttäjä voi käyttää sormenjälkeä, kasvojentunnistusta tai silmänirtoa vahvistumiseen.
