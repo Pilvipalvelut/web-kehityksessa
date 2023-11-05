@@ -10,15 +10,9 @@ Autentikointiprosessi sisältää seuraavat vaiheet:
 ### Kaksivaiheinen tunnistautuminen
 Kaksivaiheinen tunnistautuminen (2FA tai MFA) on turvallisuuskäytänne, jossa käyttäjän täytyy syöttää kaksi tai useampia eri tekijöitä todistaakseen henkilöllisyytensä ennen kuin hän saa pääsyn tiettyihin järjestelmiin tai palveluihin. Kaksivaiheisen tunnistautumisen käyttö riippuu palvelun tai järjestelmän tarpeista ja käyttötarkoituksesta. Se on suositeltavaa tietojärjestelmissä joissa on käyttäjän henkilökohtaisia tietoja, tällaisia ovat esimerkiksi verkkopankit ja organisaatioiden sisäiset tietojärjestelmät. 
 Kaksivaiheinen tunnistautuminen perustuu seuraaviin asioihin:
-1. **Tieto** (knowledge factor): Käyttäjän tiedon varmistaminen, kuten salasanan syöttäminen.
-2. **Omistus** (possession factor): Käyttäjän oman laitteen tai fyysisen esineen käyttäminen vahvistuksena, esimerkiksi mobiilisovelluksen, puhelimen tai turvallisuustokenin avulla.
-3. **Ominaisuus** (inherence factor): Käyttäjän biometriset piirteet, kuten sormenjälki, kasvojentunnistus tai silmän iiriksen tunnistus
-
-2FA voi sisältää kertakäyttöisen salasanan (OTP) lähettämisen käyttäjälle eri tavoilla. Käyttäjälle voidaan lähettää tekstiviestillä, sähköpostilla tai puhelimitse yksilöllinen koodi, jonka hän syöttää tunnistautuakseen. Tai hyödynnetään tietoa joka on vain käyttäjällä:
-
-1. **Mobiilisovellukset:** Monet palvelut tarjoavat mobiilisovelluksen kuten Google tai Microsoft Authenticator tai Authy, jotka tuottavat satunnaisen koodin, jonka käyttäjä syöttää kirjautumisessa.
-2. **Fyysinen turvallisuustoken:** Käyttäjille annetaan fyysinen laite, joka tuottaa yksilöllisiä koodeja.
-3. **Biometriset piirteet:** Käyttäjä voi käyttää sormenjälkeä, kasvojentunnistusta tai silmän iiristä tunnistautumisen lisätietona.
+1. **Tieto** (knowledge factor): Käyttäjän tiedon varmistaminen, kuten salasanan syöttäminen. 2FA voi sisältää kertakäyttöisen salasanan (OTP) lähettämisen käyttäjälle eri tavoilla. Käyttäjälle voidaan lähettää tekstiviestillä, sähköpostilla tai puhelimitse yksilöllinen koodi, jonka hän syöttää tunnistautuakseen.
+2. **Omistus** (possession factor): Käyttäjän oman laitteen tai fyysisen esineen käyttäminen vahvistuksena, esimerkiksi mobiilisovelluksen, puhelimen tai turvallisuustokenin avulla. Monet palvelut tarjoavat mobiilisovelluksen kuten Google tai Microsoft Authenticator tai Authy, jotka tuottavat satunnaisen koodin, jonka käyttäjä syöttää kirjautumisessa. Käyttäjälle voidaan antaa tai lähettää fyysinen laite, joka tuottaa yksilöllisiä koodeja.
+3. **Ominaisuus** (inherence factor): Käyttäjän biometriset piirteet, kuten sormenjälki, kasvojentunnistus tai silmän iiriksen tunnistautumisen lisätietona
 
 ### Sessioiden hallinta
 Kun käyttäjä on onnistuneesti tunnistettu, sovellus luo istunnon, joka mahdollistaa käyttäjän vuorovaikutuksen sovelluksen kanssa. Tämä sessio voidaan ylläpitää evästeiden tai istuntoiden avulla.
@@ -28,7 +22,5 @@ OAuth 2.0 on standardi jonka avulla voidaan toteuttaa autentikointi web-sovelluk
 Muutamia hyötyjä OAuth 2.0 käyttämisestä ovat:
 
 1. **Käyttäjällä täysi hallinta:** Käyttäjä päättää mitkä kolmannet osapuolet voivat käyttää hänen tietojaan tai resurssejaan. Käyttäjä voi antaa tai peruuttaa suostumuksensa milloin tahansa.
-
 2. **Yksinkertainen integraatio:** OAuth 2.0 -standardi on laajalti hyväksytty ja tuettu, mikä tekee siitä helpon integroida erilaisten palveluiden ja sovellusten välillä. OAuth 2.0 -kirjastoja ja ratkaisuja on saatavilla useille ohjelmointikielille.
-
 3. **Skalautuvuus:** OAuth 2.0 on skaalautuva ja soveltuu monenlaisille sovelluksille ja käyttötapauksille: yksinkertaisista kirjautumisprosesseista monimutkaisiin käyttöoikeuksien hallintaan.
