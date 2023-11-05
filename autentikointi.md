@@ -14,15 +14,11 @@ Kaksivaiheinen tunnistautuminen perustuu seuraaviin asioihin:
 2. **Omistus** (possession factor): Käyttäjän oman laitteen tai fyysisen esineen käyttäminen vahvistuksena, esimerkiksi mobiilisovelluksen, puhelimen tai turvallisuustokenin avulla.
 3. **Ominaisuus** (inherence factor): Käyttäjän biometriset piirteet, kuten sormenjälki, kasvojentunnistus tai silmän iiriksen tunnistus
 
-2FA voi sisältää kertakäyttöisen salasanan (OTP) lähettämisen käyttäjälle eri tavoilla:
-1. **Tekstiviesti (SMS) tai puhelinvahvistus:** Käyttäjälle lähetetään tekstiviestillä tai puhelimitse yksilöllinen koodi, jonka hän syöttää tunnistautuakseen.
-2. **Sähköposti:** Käyttäjälle lähetetään sähköpostitse yksilöllinen koodi.
+2FA voi sisältää kertakäyttöisen salasanan (OTP) lähettämisen käyttäjälle eri tavoilla. Käyttäjälle voidaan lähettää tekstiviestillä, sähköpostilla tai puhelimitse yksilöllinen koodi, jonka hän syöttää tunnistautuakseen. Tai hyödynnetään tietoa joka on vain käyttäjällä:
 
-Tai jonkin tiedon perusteella, joka on vain käyttäjällä:
-
-3. **Mobiilisovellukset:** Monet palvelut tarjoavat mobiilisovelluksen kuten Google tai Microsoft Authenticator tai Authy, jotka tuottavat satunnaisen koodin, jonka käyttäjä syöttää kirjautumisessa.
-4. **Fyysinen turvallisuustoken:** Käyttäjille annetaan fyysinen laite, joka tuottaa yksilöllisiä koodeja.
-5. **Biometriset piirteet:** Käyttäjä voi käyttää sormenjälkeä, kasvojentunnistusta tai silmän iiristä vahvistumiseen.
+1. **Mobiilisovellukset:** Monet palvelut tarjoavat mobiilisovelluksen kuten Google tai Microsoft Authenticator tai Authy, jotka tuottavat satunnaisen koodin, jonka käyttäjä syöttää kirjautumisessa.
+2. **Fyysinen turvallisuustoken:** Käyttäjille annetaan fyysinen laite, joka tuottaa yksilöllisiä koodeja.
+3. **Biometriset piirteet:** Käyttäjä voi käyttää sormenjälkeä, kasvojentunnistusta tai silmän iiristä tunnistautumisen lisätietona.
 
 ### Sessioiden hallinta
 Kun käyttäjä on onnistuneesti tunnistettu, sovellus luo istunnon, joka mahdollistaa käyttäjän vuorovaikutuksen sovelluksen kanssa. Tämä sessio voidaan ylläpitää evästeiden tai istuntoiden avulla.
