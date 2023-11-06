@@ -85,7 +85,12 @@ Jekyll-teemoja voi etsiä osoitteista
 
 
 ### 3. Tehtävä
-TBD
+1. Tee luentomateriaalin ohjeiden  mukainen Firebase-tietokanta ja konfiguraatio sovelluksen käyttämiseksi. 
+2. Tee Vite tai React-sovellus paikallisen koneen komentorivillä.
+- Ohje Vite-sovelluksen muodostamiseta löytyy [täältä](https://vitejs.dev/guide/)
+- Ohje React-sovelluksen muodostamisesta löytyy [täältä](https://create-react-app.dev/docs/getting-started)
+3. Asenna Firabase-tools paketti paikallisen koneen komentorivillä. Ohjeita voi katsoa [täältä](https://firebase.google.com/docs/cli)
+4. Konfiguroi 2. kohdassa tehty sovellus käyttämään Firestore-tietokantaa
 
 ### 4. Tehtävä
 TBD
