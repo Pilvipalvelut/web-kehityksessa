@@ -91,8 +91,7 @@ Jekyll-teemoja voi etsiä osoitteista
 - Ohje React-sovelluksen muodostamisesta löytyy [täältä](https://create-react-app.dev/docs/getting-started)
 3. Asenna Firabase-tools paketti paikallisen koneen komentorivillä. Ohjeita voi katsoa [täältä](https://firebase.google.com/docs/cli)
 4. Konfiguroi 2. kohdassa tehty sovellus käyttämään Firestore-tietokantaa
-
-Palautuksena Teams:iin kuvankaappaus selaimesta kun Vite + React -sovellus on saatu omalla koneella käyntiin.
+#### Palautuksena Teams:iin kuvankaappaus selaimesta kun Vite + React -sovellus on saatu omalla koneella käyntiin.
 
 ### 4. Tehtävä
 TBD
