@@ -94,14 +94,24 @@ Jekyll-teemoja voi etsiä osoitteista
 #### Palautuksena Teams:iin kuvankaappaus selaimesta kun Vite + React -sovellus on saatu omalla koneella käyntiin.
 
 ### 4. Tehtävä
-
+Tee sovellukselle tiedosto firebaseConfig.ts johon tulee tiedot Firebasestasi
+~~~
+export default {
+    apiKey: "xyz!#¤%&/",
+    authDomain: "pilvi-react.firebaseapp.com",
+    projectId: "pilvi-react",
+    storageBucket: "pilvi-react.appspot.com",
+    messagingSenderId: "123456",
+    appId: "1:123456:web:789abcdef",
+  };
+~~~
+Tee uusi TypeScript-komponentti LoginForm, johon tulee alla oleva koodi:
 ~~~
 import React, { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import firebaseConfig from "../firebaseConfig";
-//import { auth } from "../firebaseConfig"; 
 
 function LoginForm() {
   const app = initializeApp(firebaseConfig);
