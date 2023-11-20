@@ -171,7 +171,27 @@ export default LoginForm;
 ### 5. Tehtävä
 1. Tee uusi seurattava sivusto Matomon käyttöliittymällä. 
 2. Laita sivustolle keksi Matomon ohjeistuksen mukaisesti.
-3. Tee sivustolle toiminto, joka hakee tietoa sivuston käytöstä viimeisen 30 päivän ajalta Matomon API:n kautta. Opas Matomo API:n käyttämiseen [täältä](https://developer.matomo.org/api-reference/reporting-api).
+~~~
+    import React from 'react';
+
+    export default function App () {
+    React.useEffect(() => {
+            var _mtm = window._mtm = window._mtm || [];
+            _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
+            var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+            g.async=true; g.src='{YOUR_MATOMO_TAG_MANAGER_CONTAINER_URL}'; s.parentNode.insertBefore(g,s);
+    }, [])
+
+    return (
+        <div>
+            <h1>Hello World</h1>
+        </div>
+    )
+   }
+~~~   
+
+### 6. Tehtävä
+Tee sivustolle toiminto, joka hakee tietoa sivuston käytöstä viimeisen 30 päivän ajalta Matomon API:n kautta. Opas Matomo API:n käyttämiseen [täältä](https://developer.matomo.org/api-reference/reporting-api).
 
 ~~~
 import requests
@@ -197,9 +217,6 @@ data = response.json()
 # Display the result
 print("Kävijöiden määrä viimeisten 30 päivän aikana: ", data['value'])
 ~~~
-
-### 6. Tehtävä
-TBD
 
 ### 7. Tehtävä
 TBD
