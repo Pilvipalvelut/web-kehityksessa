@@ -169,7 +169,34 @@ export default LoginForm;
 ~~~
 
 ### 5. Tehtävä
-TBD
+1. Tee uusi seurattava sivusto Matomon käyttöliittymällä. 
+2. Laita sivustolle keksi Matomon ohjeistuksen mukaisesti.
+3. Tee sivustolle toiminto, joka hakee tietoa sivuston käytöstä viimeisen 30 päivän ajalta Matomon API:n kautta. Opas Matomo API:n käyttämiseen [täältä](https://developer.matomo.org/api-reference/reporting-api).
+
+~~~
+import requests
+
+# Matomo API osoite
+matomo_url = 'https://pilvipalvelut-matomo.rahtiapp.fi'
+token_auth = 'DIG001AS3A-3001 kurssin avain'
+
+# Viimeisten 30 päivän data
+api_params = {
+    'module': 'API',
+    'method': 'VisitsSummary.get',
+    'idSite': '123', 
+    'period': 'month',
+    'date': 'last30',
+    'format': 'json',
+    'token_auth': token_auth,
+}
+
+response = requests.get(matomo_url, params=api_params)
+data = response.json()
+
+# Display the result
+print("Kävijöiden määrä viimeisten 30 päivän aikana: ", data['value'])
+~~~
 
 ### 6. Tehtävä
 TBD
