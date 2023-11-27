@@ -194,29 +194,26 @@ export default LoginForm;
 Tee sivustolle toiminto, joka hakee tietoa sivuston käytöstä viimeisen 30 päivän ajalta Matomon API:n kautta. Opas Matomo API:n käyttämiseen [täältä](https://developer.matomo.org/api-reference/reporting-api).
 
 ~~~
-import requests
+import axios from 'axios';
 
 # Matomo API osoite
-matomo_url = 'https://pilvipalvelut-matomo.rahtiapp.fi'
-token_auth = 'DIG001AS3A-3001 kurssin avain'
+    const token = 'kysy token'
+    const fetchData = async () => {
+      try {
 
-# Viimeisten 30 päivän data
-api_params = {
-    'module': 'API',
-    'method': 'VisitsSummary.get',
-    'idSite': '123', 
-    'period': 'month',
-    'date': 'last30',
-    'format': 'json',
-    'token_auth': token_auth,
-}
-
-response = requests.get(matomo_url, params=api_params)
-data = response.json()
-
-# Display the result
-print("Kävijöiden määrä viimeisten 30 päivän aikana: ", data['value'])
+       const response = await axios.get('https://pilvipalvelut-matomo.rahtiapp.fi/index.php?module=API&method=VisitsSummary.get&idSite=1&period=day&date=last30&format=json&token_auth=${token}');
+        // const response = await axios.get('https://dummyjson.com/products');
+        if (response.status === 200) {
+          const data = await response.data
+          console.log(data)
+          setProducts(data.products)
+        }
+      } catch (error) {
+        console.error('Virhe tietojen haussa:', error);
+      }
+    };
 ~~~
+Jos Matomon tietojen saaminen ei onnistu niin mikä tahansa muu REST API tietojen näyttäminen käy.
 
 ### 7. Tehtävä
 TBD
