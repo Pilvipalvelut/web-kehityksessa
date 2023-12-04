@@ -216,4 +216,4 @@ import axios from 'axios';
 Jos Matomon tietojen saaminen ei onnistu niin mikä tahansa muu REST API tietojen näyttäminen käy.
 
 ### 7. Tehtävä
-TBD
+Tee työsuunnitelma [harjoitustyölle](https://github.com/Pilvipalvelut/web-kehityksessa/blob/main/harjoitustyo.md). Suunnitelmassa tulisi olla aiheen ja mahdollisten tekniikoiden esittelyt.
