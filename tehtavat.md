@@ -2,9 +2,9 @@
 
 Arviointi: oppimistehtävät 60 % ja oma soveltava harjoitustyö 40 %.
 
-Kurssilla on 7 oppimistehtävää, yksi tehtävä / lähiopetusviikko ja jokaisen viikon tehtävä palautetaan seuraavan viikon tunteihin mennessä. Tehtävien palautuspäivämäärä on kuluvan viikon sunnuntai klo 22. Myöhässä oppimistehtäviä voi palauttaa, mutta niistä vähennetään pisteitä kaavalla 10% vähennystä / viikko. Joidenkin tehtävien kohdalla käymme tehtävän haasteellisia kohtia läpi seuraavalla tunnilla ja opintojakson päätteeksi myös mallivastaukset tulevat näkyville. Yhdestä oppimistehtävästä saa max 6 p.  Yhteensä siis 7 x 6 p = 42 p.
+Kurssilla on 7 oppimistehtävää, yksi tehtävä / lähiopetusviikko ja jokaisen viikon tehtävä palautetaan seuraavan viikon tunteihin mennessä. Tehtävien palautuspäivämäärä on kuluvan viikon sunnuntai klo 22. Myöhässä oppimistehtäviä voi palauttaa, mutta niistä vähennetään pisteitä kaavalla 10% vähennystä / viikko. Joidenkin tehtävien kohdalla käymme tehtävän haasteellisia kohtia läpi seuraavalla tunnilla ja opintojakson päätteeksi myös mallivastaukset tulevat näkyville. Yhdestä oppimistehtävästä saa max 6 p.  Yhteensä siis 6 x 6 p = 36 p.
 
-[Harjoitustyöstä](https://github.com/Pilvipalvelut/web-kehityksessa/blob/main/harjoitustyo.md) saa parhaimmillaan 30 p ja se palautetaan opintojakson loppuun mennessä 17.12. klo 22.
+[Harjoitustyöstä](https://github.com/Pilvipalvelut/web-kehityksessa/blob/main/harjoitustyo.md) saa parhaimmillaan 34 p ja se palautetaan opintojakson loppuun mennessä 17.5. klo 22.
 
 ##
 
@@ -214,6 +214,3 @@ import axios from 'axios';
     };
 ~~~
 Jos Matomon tietojen saaminen ei onnistu niin mikä tahansa muu REST API tietojen näyttäminen käy.
-
-### 7. Tehtävä
-Tee työsuunnitelma [harjoitustyölle](https://github.com/Pilvipalvelut/web-kehityksessa/blob/main/harjoitustyo.md). Suunnitelmassa tulisi olla aiheen ja mahdollisten tekniikoiden esittelyt.
