@@ -70,8 +70,8 @@ h1 {
 </head>
 ~~~
 #### 1.5. Muuta repository asetuksia
-- Siirry repositoryn asetuksiin _Settings_, jossa määritellään GitHub Pages-sivuston asetukset. Ks. [kuva1](https://github.com/Pilvipalvelut/web-kehityksessa/blob/main/gh_pages1.png)
-- Valitse _Settings_-sivun vasemmasta valikosta _Code and automation_ ja _Pages_-välilehti. Välilehdeltä voidaan merkitä julkaistavaksi _main_ branch, joka on ns. default kehityshaara repositoryssa. Ks. [kuva2](https://github.com/Pilvipalvelut/web-kehityksessa/blob/main/gh_pages2.png)
+- Siirry repositoryn asetuksiin _Settings_, jossa määritellään GitHub Pages-sivuston asetukset. Ks. ![GitHub asetukset](gh_pages1.png)
+- Valitse _Settings_-sivun vasemmasta valikosta _Code and automation_ ja _Pages_-välilehti. Välilehdeltä voidaan merkitä julkaistavaksi _main_ branch, joka on ns. default kehityshaara repositoryssa. Ks. ![Julkaistavan haaran valinta](gh_pages2.png)
 - Kun asetus on oikein tehty sivusto on näkyvillä ja linkki sivustoon tulee _Settings_-sivulle näkyviin
 - Tarkista toisella selaimella tai incognito-tilassa miltä sivusto näyttää muille käyttäjille. Sivusto on osoitteessa: https://kayttajanimi.github.io/repositoryn-nimi
 
@@ -85,6 +85,9 @@ Jekyll-teemoja voi etsiä osoitteista
 - [Jekyll Themes](https://jekyll-themes.com/)
 #### 2.2. 
 Tee aloitussivulle (index) lista linkeistä, joilla pääsee tutustumaan tehtävä palautuksiin.
+![Esimerkki tehtävälistauksesta](gh_pages3.png)
+#### 2.3. 
+Tee viikolle 2 oma sivu (esimerkiksi vko2.md), jossa kuvailet miten Jekyll sivustoa voisi automatisoida käyttäen GitHub Actions-toimintoja. Tekstimäärä noin 100 sanaa.
 
 
 ### 3. Tehtävä
