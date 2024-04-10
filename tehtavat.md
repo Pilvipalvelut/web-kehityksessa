@@ -91,16 +91,20 @@ Tee viikolle 2 oma sivu (esimerkiksi vko2.md), jossa kuvailet miten Jekyll sivus
 ##
 
 ### 3. Tehtävä
-1. Tee luentomateriaalin ohjeiden  mukainen Firebase-tietokanta ja konfiguraatio sovelluksen käyttämiseksi. 
-2. Tee Vite tai React-sovellus paikalliselle koneelle komentorivillä.
+#### 3.1. Vite + React -verkkosovellus
+1. Tee Vite + React-verkkosovellus paikalliselle koneelle npm-paketinhallinta ohjelmalla
 - Ohje Vite-sovelluksen muodostamiseta löytyy [täältä](https://vitejs.dev/guide/)
 - Ohje React-sovelluksen muodostamisesta löytyy [täältä](https://create-react-app.dev/docs/getting-started)
-3. Asenna Firabase-tools paketti paikallisen koneen komentorivillä. Ohjeita voi katsoa [täältä](https://firebase.google.com/docs/cli)
-4. Konfiguroi 2. kohdassa tehty sovellus käyttämään Firestore-tietokantaa
-#### Palautuksena Teams:iin kuvankaappaus selaimesta kun Vite + React -sovellus on saatu omalla koneella käyntiin.
+2. Aja Vite-sovellukselle npm run build
+3. Siirrä dist-kansion sisältö GitHub Pages -sivustolle kansioon vko3
+#### 3.2. Firebase-tietokanta
+1. Tee luentomateriaalin ohjeiden  mukainen Firebase-tietokanta ja konfiguraatio sovelluksen käyttämiseksi. 
+2. Asenna Firabase-tools paketti paikallisen koneen komentorivillä. Ohjeita voi katsoa [täältä](https://firebase.google.com/docs/cli)
+#### Palautuksena Teams:iin viikon 3 linkki kun Vite + React -sovellus on saatu vietyä sivustolle.
 ##
 
 ### 4. Tehtävä
+Konfiguroi 3.1. kohdassa tehty verkkosovellus käyttämään Firestore-tietokantaa
 Tee sovellukselle tiedosto firebaseConfig.ts johon tulee tiedot Firebasestasi
 ~~~
 export default {
