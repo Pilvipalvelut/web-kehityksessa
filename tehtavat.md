@@ -70,11 +70,11 @@ h1 {
 </head>
 ~~~
 #### 1.5. Muuta repository asetuksia
-- Siirry repositoryn asetuksiin _Settings_, jossa määritellään GitHub Pages-sivuston asetukset. Ks. [kuva1](https://github.com/Pilvipalvelut/web-kehityksessa/blob/main/gh_pages1.png)
-- Valitse _Settings_-sivun vasemmasta valikosta _Code and automation_ ja _Pages_-välilehti. Välilehdeltä voidaan merkitä julkaistavaksi _main_ branch, joka on ns. default kehityshaara repositoryssa. Ks. [kuva2](https://github.com/Pilvipalvelut/web-kehityksessa/blob/main/gh_pages2.png)
+- Siirry repositoryn asetuksiin _Settings_, jossa määritellään GitHub Pages-sivuston asetukset. Ks. ![GitHub asetukset](gh_pages1.png)
+- Valitse _Settings_-sivun vasemmasta valikosta _Code and automation_ ja _Pages_-välilehti. Välilehdeltä voidaan merkitä julkaistavaksi _main_ branch, joka on ns. default kehityshaara repositoryssa. Ks. ![Julkaistavan haaran valinta](gh_pages2.png)
 - Kun asetus on oikein tehty sivusto on näkyvillä ja linkki sivustoon tulee _Settings_-sivulle näkyviin
 - Tarkista toisella selaimella tai incognito-tilassa miltä sivusto näyttää muille käyttäjille. Sivusto on osoitteessa: https://kayttajanimi.github.io/repositoryn-nimi
-
+##
 
 ### 2. Tehtävä
 #### 2.1. Jekyll-teema
@@ -83,9 +83,12 @@ Muunna GitHub Pages -sivustosi niin että HTML-sivujen sijaan käytetään md-ti
 Jekyll-teemoja voi etsiä osoitteista
 - [GitHub Themes](https://pages.github.com/themes/)
 - [Jekyll Themes](https://jekyll-themes.com/)
-#### 2.2. 
+#### 2.2. Linkkilista etusivulla jokaisen viikon tehtäväsivulle
 Tee aloitussivulle (index) lista linkeistä, joilla pääsee tutustumaan tehtävä palautuksiin.
-
+![Esimerkki tehtävälistauksesta](gh_pages3.png)
+#### 2.3. Lyhyt kirjoitus
+Tee viikolle 2 oma sivu (esimerkiksi vko2.md), jossa kuvailet miten Jekyll sivustoa voisi automatisoida käyttäen GitHub Actions-toimintoja. Vastaa myös millaisilla kehitystyökaluilla ja -tekniikoilla saataisiin CI/CD-putkisto rakennettua web-sovellukselle. Tekstimäärä noin 150 sanaa.
+##
 
 ### 3. Tehtävä
 1. Tee luentomateriaalin ohjeiden  mukainen Firebase-tietokanta ja konfiguraatio sovelluksen käyttämiseksi. 
@@ -95,6 +98,7 @@ Tee aloitussivulle (index) lista linkeistä, joilla pääsee tutustumaan tehtäv
 3. Asenna Firabase-tools paketti paikallisen koneen komentorivillä. Ohjeita voi katsoa [täältä](https://firebase.google.com/docs/cli)
 4. Konfiguroi 2. kohdassa tehty sovellus käyttämään Firestore-tietokantaa
 #### Palautuksena Teams:iin kuvankaappaus selaimesta kun Vite + React -sovellus on saatu omalla koneella käyntiin.
+##
 
 ### 4. Tehtävä
 Tee sovellukselle tiedosto firebaseConfig.ts johon tulee tiedot Firebasestasi
@@ -170,6 +174,7 @@ function LoginForm() {
 
 export default LoginForm;
 ~~~
+##
 
 ### 5. Tehtävä
 1. Tee uusi seurattava sivusto Matomon käyttöliittymällä. 
@@ -192,6 +197,7 @@ export default LoginForm;
     )
    }
 ~~~   
+##
 
 ### 6. Tehtävä
 Tee sivustolle toiminto, joka hakee tietoa sivuston käytöstä viimeisen 30 päivän ajalta Matomon API:n kautta. Opas Matomo API:n käyttämiseen [täältä](https://developer.matomo.org/api-reference/reporting-api).
