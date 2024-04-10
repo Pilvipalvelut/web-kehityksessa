@@ -96,7 +96,8 @@ Tee viikolle 2 oma sivu (esimerkiksi vko2.md), jossa kuvailet miten Jekyll sivus
 - Ohje Vite-sovelluksen muodostamiseta löytyy [täältä](https://vitejs.dev/guide/)
 - Ohje React-sovelluksen muodostamisesta löytyy [täältä](https://create-react-app.dev/docs/getting-started)
 2. Aja Vite-sovellukselle npm run build
-3. Siirrä dist-kansion sisältö GitHub Pages -sivustolle kansioon vko3
+3. Muuta css ja js-tiedostojen polut absoluuttisiksi, kuten src="kayttajanimi.github.io/repositoryn-nimi/vko3/tiedosto.css
+4. Siirrä dist-kansion sisältö GitHub Pages -sivustolle kansioon vko3
 #### 3.2. Firebase-tietokanta
 1. Tee luentomateriaalin ohjeiden  mukainen Firebase-tietokanta ja konfiguraatio sovelluksen käyttämiseksi. 
 2. Asenna Firabase-tools paketti paikallisen koneen komentorivillä. Ohjeita voi katsoa [täältä](https://firebase.google.com/docs/cli)
