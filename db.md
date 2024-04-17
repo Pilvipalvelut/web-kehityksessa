@@ -1,12 +1,7 @@
 ## Firebase -tietokanta
-- Siirry selaimella osoitteeseen: [https://console.firebase.google.com](https://console.firebase.google.com)
-- Voit käyttää Google-tiliä tietokannan luonnissa
-- Luo Firebase-projekti valitsemalla _Create a project_-painiketta
-- Anna projektille nimi ja valitse lisäasetukset, kuten Google Analytics-tuki
-- Paina _Next_-painiketta
-- Valitse projektille sijainti, jonne projektin data tallennetaan
-- Paina _Create project_ 
-
+- Firebasen käyttöönotto: [https://console.firebase.google.com](https://console.firebase.google.com)
+- Tarvitaan Google-tili tietokannan luonnissa
+- Firestore-osio jonne voidaan tallentaa JSON-dokumentteja 
 
 CSV-tiedoston datan tuominen PostgreSQL- tai MySQL-tietokantaan on suhteellisen helppoa käyttäen näiden tietokantajärjestelmien tarjoamia työkaluja ja komentoja. Tässä on yksinkertainen vaiheittainen ohje:
 
