@@ -105,7 +105,7 @@ Tee viikolle 2 oma sivu (esimerkiksi vko2.md), jossa kuvailet miten Jekyll sivus
 ##
 
 ### 4. Tehtävä
-Konfiguroi 3.1. kohdassa tehty verkkosovellus käyttämään Firestore-tietokantaa
+Konfiguroi 3.1. kohdassa tehty verkkosovellus käyttämään Firebase-autentikaatiota.
 Tee sovellukselle tiedosto firebaseConfig.ts johon tulee tiedot Firebasestasi
 ~~~
 export default {
