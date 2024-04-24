@@ -183,7 +183,8 @@ export default LoginForm;
 
 ### 5. Tehtävä
 1. Tee uusi seurattava sivusto Matomon käyttöliittymällä. 
-2. Laita sivustolle keksi Matomon ohjeistuksen mukaisesti.
+2. Laita sivustolle keksi [Matomon ohjeistuksen](https://matomo.org/faq/new-to-piwik/how-do-i-start-tracking-data-with-matomo-on-websites-that-use-react/) mukaisesti.
+3. Tee viikolle 5 oma sivu (esimerkiksi vko5.md), jossa kuvailet miten analyytiikkaa voisi hyödyntää sivustollasi ja esimerkiksi harjoitustehtävässä. Tekstimäärä noin 100 sanaa.
 ~~~
     import React from 'react';
 
