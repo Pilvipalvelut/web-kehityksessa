@@ -212,12 +212,13 @@ Tee sivustolle toiminto, joka hakee tietoa sivuston käytöstä viimeisen 30 pä
 import axios from 'axios';
 
 # Matomo API osoite
+  React.useEffect(() => {  
     const token = 'kysy token'
     const fetchData = async () => {
       try {
 
-       const response = await axios.get('https://pilvipalvelut-matomo.rahtiapp.fi/index.php?module=API&method=VisitsSummary.get&idSite=1&period=day&date=last30&format=json&token_auth=${token}');
-        // const response = await axios.get('https://dummyjson.com/products');
+       //const response = await axios.get('https://pilvipalvelut-matomo.rahtiapp.fi/index.php?module=API&method=VisitsSummary.get&idSite=1&period=day&date=last30&format=json&token_auth=${token}');
+        const response = await axios.get('https://dummyjson.com/products');
         if (response.status === 200) {
           const data = await response.data
           console.log(data)
@@ -227,5 +228,9 @@ import axios from 'axios';
         console.error('Virhe tietojen haussa:', error);
       }
     };
+
+    fetchData();  
+  }, []);
+  const [products, setProducts] = useState<[]>([]);
 ~~~
 Jos Matomon tietojen saaminen ei onnistu niin mikä tahansa muu REST API tietojen näyttäminen käy.
