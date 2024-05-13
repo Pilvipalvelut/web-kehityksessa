@@ -1,12 +1,12 @@
 ## Harjoitustyö
 arvioinnissa käytetyt kriteerit:
-- idea
-- sisältö
-- visuaalisuus ja selkeys
-- sama tyyli läpi esityksen
-- responsiivisuus
+- idea = jokin käytännöllinen sivusto, jossa on hyödyllistä tietoa
+- sisältö = 
+- visuaalisuus ja selkeys = (Nielsen heuristiikkojen)[https://www.nngroup.com/articles/ten-usability-heuristics] mukainen käytettävyys
+- sama tyyli läpi esityksen = sivuilla on samanlainen navigointi ja ulkoasu
+- responsiivisuus = toimivuus eri kokoisilla päätelaitteilla (testaa)
 - tietokannan (firebase) ja kolmannen osapuolien palveluiden (esimerkiksi REST-rajapinnan yli) käyttö
-- toimivuus uusimmilla selaimilla & eri kokoisilla päätelaitteilla (testaa)
+- toimivuus uusimmilla selaimilla (testaa)
 - sivujen latautumisaika kohtuullinen (testaa)
 
 ### Palautus
