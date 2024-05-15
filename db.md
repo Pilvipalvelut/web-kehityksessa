@@ -3,6 +3,7 @@
 - Tarvitaan Google-tili tietokannan luonnissa
 - Firestore-osio jonne voidaan tallentaa JSON-dokumentteja 
 
+## Postgres ja MySQL -tietokannat
 CSV-tiedoston datan tuominen PostgreSQL- tai MySQL-tietokantaan on suhteellisen helppoa käyttäen näiden tietokantajärjestelmien tarjoamia työkaluja ja komentoja. Tässä on yksinkertainen vaiheittainen ohje:
 
 **CSV-tiedoston tuonti PostgreSQL-tietokantaan:**
