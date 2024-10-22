@@ -20,11 +20,11 @@ Kurssin aikana tehdään [tehtäviä](https://github.com/Pilvipalvelut/web-kehit
 Jos olet hankkinut tämän kurssin mukaisen osaamisen työsi kautta, voit osoittaa osaamisesi tavanomaisen osallistumisen sijasta AHOT-menettelyllä. Osaamisen tunnistamiseksi ilmoittaudu tälle kurssille normaalisti, ja ole yhteydessä kurssin opettajiin AHOT-järjestelyjen osalta viimeistään kurssin ensimmäisen viikon aikana.
 Tarkemmat ohjeet AHOT-käytäntöjen suhteen löydät [täältä](https://github.com/Pilvipalvelut/web-kehityksessa/blob/main/ahot.md).
 
-# Kurssin aikataulu (kevät 2024)
+# Kurssin aikataulu (syksy 2024)
 
-Kurssista järjestetään keväällä 2024 toteutus. Toteutuksen DIG001AS3A-3002 yhteiset tapaamiset järjestetään viikoittain seuraavasti:
+Kurssista järjestetään syskyllä 2024 toteutus. Toteutuksen DIG001AS3A-3003 yhteiset tapaamiset järjestetään viikoittain seuraavasti:
 
-2. periodi **keskiviikkoisin klo 17:40-20:30** luokassa **5015** ja Zoomissa.
+2. periodi **keskiviikkoisin klo 17:40-20:30** Zoomissa.
 
 Kurssin laajuus on 5 opintopistettä, eli noin 135 tuntia. Kurssin aikana viikoittaiseksi työmääräksi tulee noin 17 tuntia. Tulet siis työskentelemään merkittävässä määrin myös yhteisten tapaamisten ulkopuolella.
 
