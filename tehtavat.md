@@ -153,7 +153,6 @@ function LoginForm() {
 
   return (
     <div>
-      <h2>Kirjaudu sisään</h2>
       <form onSubmit={handleLogin}>
         <div>
           <label htmlFor="email">Sähköposti:</label>
