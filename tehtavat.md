@@ -112,7 +112,7 @@ Tee viikolle 2 oma sivu (esimerkiksi vko2.md), jossa kuvailet miten Jekyll sivus
 Konfiguroi 3.1. kohdassa tehty verkkosovellus käyttämään Firebase-autentikaatiota.
 Tee sovellukselle tiedosto firebaseConfig.ts johon tulee tiedot Firebasestasi
 ~~~
-export default {
+const firebaseConfig = {
     apiKey: "xyz!#¤%&/",
     authDomain: "pilvi-react.firebaseapp.com",
     projectId: "pilvi-react",
@@ -120,6 +120,8 @@ export default {
     messagingSenderId: "123456",
     appId: "1:123456:web:789abcdef",
   };
+
+export default firebaseConfig;
 ~~~
 Tee uusi TypeScript-komponentti LoginForm (src-kansioon tulee LoginForm.tsx tiedosto), johon tulee alla oleva koodi:
 ~~~
