@@ -121,7 +121,7 @@ export default {
     appId: "1:123456:web:789abcdef",
   };
 ~~~
-Tee uusi TypeScript-komponentti LoginForm, johon tulee alla oleva koodi:
+Tee uusi TypeScript-komponentti LoginForm (src-kansioon tulee LoginForm.tsx tiedosto), johon tulee alla oleva koodi:
 ~~~
 import React, { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
