@@ -222,7 +222,7 @@ import axios from 'axios';
     const fetchData = async () => {
       try {
 
-       //const response = await axios.get('https://pilvipalvelut-matomo.rahtiapp.fi/index.php?module=API&method=VisitsSummary.get&idSite=1&period=day&date=last30&format=json&token_auth=${token}');
+       //const response = await axios.get('https://pilvipalvelut-matomo.2.rahtiapp.fi/index.php?module=API&method=VisitsSummary.get&idSite=1&period=day&date=last30&format=json&token_auth=${token}');
         const response = await axios.get('https://dummyjson.com/products');
         if (response.status === 200) {
           const data = await response.data
