@@ -10,4 +10,8 @@ arvioinnissa käytetyt kriteerit:
 - sivujen latautumisaika kohtuullinen (testaa ja tee lyhyt raportti)
 
 ### Palautus
-Teams-kanavalle URL-osoite GitHub Pages -sivustolle
+Teams-kanavalle URL-osoite GitHub Pages -sivustolle jossa harjoitustyö ja raportit ovat
+
+### Esimerkki hienosta harjoitustyöstä raportteineen
+
+[Timo Pöyhönen](https://github.com/TimoPoyhonen): [SafkaBoksi](https://timopoyhonen.github.io/DIG001AS3A-3002/harjoitustyo.html)
