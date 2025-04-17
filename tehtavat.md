@@ -138,19 +138,19 @@ function LoginForm() {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
 
-  const handleLogin = async (e: React.FormEvent) => {
-    e.preventDefault();
-    try {
-      await signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        const user = userCredential.user;
-        console.log("Tämä on esimerkkiviesti " + user.email);
-
-      });
-      // Kirjautuminen onnistui
-    } catch (error) {
-      // Kirjautuminen epäonnistui, näytä virheilmoitus käyttäjälle
-    }
+  const handleLogin = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+        await signInWithEmailAndPassword(auth, email, password) 
+            .then((userCredential) => {
+                // Signed in
+                const user = userCredential.user;
+                console.log('User signed in:', user.email);
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                console.error('Error signing in:', errorCode, errorMessage);
+            });       
   }
 
   return (
