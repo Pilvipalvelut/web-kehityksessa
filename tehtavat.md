@@ -191,15 +191,15 @@ export default LoginForm;
 2. Laita sivustolle keksi [Matomon ohjeistuksen](https://matomo.org/faq/new-to-piwik/how-do-i-start-tracking-data-with-matomo-on-websites-that-use-react/) mukaisesti.
 3. Tee viikolle 5 oma sivu (esimerkiksi vko5.md), jossa kuvailet miten analyytiikkaa voisi hyödyntää sivustollasi ja esimerkiksi harjoitustehtävässä. Tekstimäärä noin 100 sanaa.
 ~~~
-    import React from 'react';
-
-    export default function App () {
-    React.useEffect(() => {
-            var _mtm = window._mtm = window._mtm || [];
-            _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
-            var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-            g.async=true; g.src='{YOUR_MATOMO_TAG_MANAGER_CONTAINER_URL}'; s.parentNode.insertBefore(g,s);
-    }, [])
+  useEffect(() => {  
+    var _mtm = window._mtm = window._mtm || [];
+    _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
+    const d=document, g=d.createElement('script'), s: HTMLScriptElement=d.getElementsByTagName('script')[0];
+    g.async=true; g.src='https://pilvipalvelut-matomo.2.rahtiapp.fi/js/container_{{omakoodi}}.js'; 
+    if (s && s.parentNode) {
+      s.parentNode.insertBefore(g,s);
+    }
+  }, []);
 
     return (
         <div>
