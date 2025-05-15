@@ -239,3 +239,100 @@ import axios from 'axios';
   const [products, setProducts] = useState<[]>([]);
 ~~~
 Jos Matomon tietojen saaminen ei onnistu niin mikä tahansa muu REST API tietojen näyttäminen käy.
+ProductList.tsx haku FireStore kannasta
+
+
+~~~
+import { useState, useEffect } from 'react';
+import { getFirestore, getDocs, collection, addDoc } from 'firebase/firestore';
+import { initializeApp } from 'firebase/app';
+import firebaseConfig from '../firebaseConfig';
+
+interface Product {
+    id: string;
+    name: string;
+    price: number;
+}
+
+function ProductList() {
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+    const [products, setProducts] = useState<Product[]>([]);
+    const [newName, setNewName] = useState<string>('');
+    const [newPrice, setNewPrice] = useState<number>(0);
+
+    const fetchDataFromFs = async () => {
+        const querySnapshot = await getDocs(collection(db, "product"));
+        const fetchedData: Product[] = [];
+        querySnapshot.forEach((doc) => {
+            const docData = doc.data() as Product;
+            fetchedData.push( docData );
+        });
+        setProducts(fetchedData);
+    };
+
+    useEffect(() => {
+        fetchDataFromFs();
+    }, []);
+
+    const addProduct = async () => {
+        if (newName) {
+            const newProduct: Product = { id: '', name: newName, price: newPrice };
+            const docRef = await addDoc(collection(db, 'product'), newProduct);
+            setProducts([...products, { ...newProduct, id: docRef.id }]);
+            console.log("Uuden tuotteen Ref Id on " + docRef.id);
+            setNewName("");  // Tyhjennetään syötekenttä
+            setNewPrice(0);  // Tyhjennetään syötekenttä
+            fetchDataFromFs();  // Päivitetään tiedot
+        }
+    };
+
+    const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        if (event.target.placeholder === "Tuotteen nimi") {
+            setNewName(event.target.value.toString());
+        } else if (event.target.placeholder === "Tuotteen hinta") {
+            setNewPrice(parseFloat(event.target.value.toString()));
+        }
+    }
+
+    return (
+        <div>
+            <h2>Tuotteet</h2>
+                <table style={{ borderCollapse: "collapse", width: "100%" }}>
+                    <thead>
+                        <tr>
+                        <th>ID</th>
+                        <th>Nimi</th>
+                        <th>Hinta</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {products.map((product) => (
+                        <tr>
+                            <td>{product.id}</td>
+                            <td>{product.name}</td>
+                            <td>{product.price}</td>
+                        </tr>
+                        ))}
+                    </tbody>
+                </table>
+                <h3>Lisää uusi tuote</h3>
+                <div style={{ marginBottom: "10px" }}>
+                    Nimi:
+                    <input type="text" value={newName} onChange={handleInputChange}
+                    placeholder="Tuotteen nimi" />
+                    Hinta:
+                    <input type="text" value={newPrice} onChange={handleInputChange}
+                    placeholder="Tuotteen hinta" />                 
+                    <button onClick={addProduct}>
+                        Lisää tuote
+                    </button>
+                </div>
+        </div>
+    );
+
+};
+
+
+export default ProductList;
+~~~
