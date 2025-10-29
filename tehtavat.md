@@ -81,7 +81,7 @@ h1 {
 Muunna GitHub Pages -sivustosi niin että HTML-sivujen sijaan käytetään md-tiedostoja ja Jekyll-teemaa. Saat lisää tietoa Jekyll-teemojen käyttämisestä [täältä](https://github.com/Pilvipalvelut/web-kehityksessa/blob/main/jekyll.md)
 
 Jekyll-teemoja voi etsiä osoitteista
-- [GitHub Themes](https://pages.github.com/themes/)
+- [GitHub Themes](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/adding-a-theme-to-your-github-pages-site-using-jekyll)
 - [Jekyll Themes](https://jekyll-themes.com/)
 #### 2.2. Linkkilista etusivulla jokaisen viikon tehtäväsivulle
 Tee aloitussivulle (index) lista linkeistä, joilla pääsee tutustumaan tehtävä palautuksiin.
