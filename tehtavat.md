@@ -184,7 +184,7 @@ function LoginForm() {
 
 export default LoginForm;
 ~~~
-##
+#### 4.3. Liitä <LoginForm /> komponentti Vite-sovelluksen etusivulle
 
 ### 5. Tehtävä
 1. Tee uusi seurattava sivusto Matomon käyttöliittymällä. 
