@@ -5,8 +5,8 @@ Tämä GitHub-repositorio sisältää Haaga-Helian Pilvipalvelut web-kehityksess
 ## Kurssin sisältö
 
 Kurssilla opiskelija jalostaa valitusta aiheesta omaa digitaalista palvelua.
-Opiskelija hyödyntää pilvipalvelutarjoajien ns. NoCode ja LowCode-palveluita oman digitaalisen palvelun rakentamisessa. 
-Erityisesti keskitytään web-kehityksen tarpeisiin kuten autentikoinnin ja analytiikan tekniikoihin, mutta myös tiedonvarastointiin valmiilla pilvestä löytyvillä palveluilla.
+Opiskelija hyödyntää pilvipalvelutarjoajien LowCode-palveluita oman digitaalisen palvelun rakentamisessa. 
+Erityisesti keskitytään web-kehityksen tarpeisiin kuten autentikoinnin, analytiikan tekniikoihin ja tiedonvarastointiin valmiilla pilvestä löytyvillä palveluilla.
 
 Kurssin suoritettuaan opiskelija ymmärtää ongelman ratkaisemiseen tarvittavia web-kehittäjän taitoja. Hän kykenee kuvaamaan tarpeita ja ehdottamaan niihin soveltuvia pilvipalveluita. Hän osaa itsenäisesti lisätä osaamistaan uusista palveluista. 
 
@@ -20,11 +20,11 @@ Kurssin aikana tehdään [tehtäviä](https://github.com/Pilvipalvelut/web-kehit
 Jos olet hankkinut tämän kurssin mukaisen osaamisen työsi kautta, voit osoittaa osaamisesi tavanomaisen osallistumisen sijasta AHOT-menettelyllä. Osaamisen tunnistamiseksi ilmoittaudu tälle kurssille normaalisti, ja ole yhteydessä kurssin opettajiin AHOT-järjestelyjen osalta viimeistään kurssin ensimmäisen viikon aikana.
 Tarkemmat ohjeet AHOT-käytäntöjen suhteen löydät [täältä](https://github.com/Pilvipalvelut/web-kehityksessa/blob/main/ahot.md).
 
-# Kurssin aikataulu (syksy 2025)
+# Kurssin aikataulu (kevät 2026)
 
-Kurssista järjestetään syksyllä 2025 toteutus. Toteutuksen DIG001AS3A-3005 yhteiset tapaamiset järjestetään viikoittain seuraavasti:
+Kurssista järjestetään keväällä 2026 toteutus. Toteutuksen DIG001AS3A-3006 yhteiset tapaamiset järjestetään viikoittain seuraavasti:
 
-2. periodi **keskiviikkoisin klo 17:40-20:30** Teams:issa.
+2. periodi **tiistaisin klo 17:40-20:30** Teams:issa.
 
 Kurssin laajuus on 5 opintopistettä, eli noin 135 tuntia. Kurssin aikana viikoittaiseksi työmääräksi tulee noin 17 tuntia. Tulet siis työskentelemään merkittävässä määrin myös yhteisten tapaamisten ulkopuolella.
 
