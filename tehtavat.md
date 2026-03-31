@@ -109,9 +109,7 @@ Luo GitHub-repositorioon automaattinen analysointijärjestelmä, joka:
 
 Luo hakemistoon `.github/workflows/` tiedosto nimeltä esimerkiksi `analysis.yml`, joka:
 
-*   Ajoitetaan suoritettavaksi aina kun:
-    *   koodia pusketaan (`push`)
-    *   tehdään `pull_request`
+*   Ajoitetaan suoritettavaksi aina kun koodia viedään (`push`) tai tehdään `pull_request`
 *   Suorittaa opiskelijan kirjoittaman analyysiskriptin
 
 Esimerkki workflow-runnerista (opiskelijat muokkaavat itse tarpeidensa mukaan):
@@ -144,15 +142,12 @@ jobs:
 
 2.2. Analyysiskripti
 
-Tee repositorioon tiedosto `analysoi.sh` (tai `analysoi.py`, jos haluat antaa vaihtoehdon), joka:
+Tee repositorioon tiedosto `analysoi.sh` (tai `analysoi.py`), joka:
 
-### Selvittää käytetyt ohjelmointikielet
+### Selvitä repositoryssa käytetyt ohjelmointikielet
 
-Vaihtoehtoja:
-
-*   lukea GitHubin automaattisesti generoimaa `languages`-tietoa (esim. `gh` CLI tai lukemalla kooditiedostojen päätteitä)
 *   analysoida tiedostopäätteitä käsin  
-    (esim. `.py`, `.js`, `.java`, `.cpp` jne.)
+    (esim. `.py`, `.js`, `.java`, `.ts` jne.)
 
 Esimerkki erittäin yksinkertaisesta shell-tavasta:
 
@@ -161,11 +156,12 @@ echo "Detected languages:"
 find . -type f -name "*.py" | grep -q . && echo "- Python"
 find . -type f -name "*.java" | grep -q . && echo "- Java"
 find . -type f -name "*.js" | grep -q . && echo "- JavaScript"
+find . -type f -name "*.ts" | grep -q . && echo "- TypeScript"
 ```
 
 ### Havaitsee yleisiä suunnittelumalleja
 
-Tämä ei tarvitse olla täydellinen — tavoitteena on **heuristiikkapohjainen** tunnistus.
+Tuloksen ei tarvitse olla täydellinen — tavoitteena on **heuristiikkapohjainen** tunnistus.
 
 Esimerkki heuristiikoista:
 
@@ -194,7 +190,7 @@ Raportin voi myös generoida markdown-muotoon.
 2.3. Raportointi
 
 *   Raportti tulostetaan GitHub Actions -lokiin
-*   Raportti tallennetaan tiedostoon `analysis_report.txt`
+*   Raportti tallennetaan tiedostoon `analysis_report.txt` kohdan 2.2. mukaisesti
 *   Tiedosto tallennetaan artefaktiksi (vapaaehtoinen)
 
 # 🎓 **Palautettava materiaali**
