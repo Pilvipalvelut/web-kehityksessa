@@ -80,7 +80,7 @@ h1 {
 ![Esimerkki tehtävälistauksesta](gh_pages3.png)
 ##
 
-### 2. Koodikielen ja suunnittelumallien automaattinen tunnistus GitHub Actionsilla**
+### 2. Koodikielen ja suunnittelumallien automaattinen tunnistus GitHub Actionsilla
 
 🎯 **Oppimistavoitteet**
 
