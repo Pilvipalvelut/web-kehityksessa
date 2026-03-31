@@ -142,14 +142,9 @@ jobs:
 
 2.2. Analyysiskripti
 
-Tee repositorioon tiedosto `analysoi.sh` (tai `analysoi.py`), joka:
+Tee repositorioon tiedosto `analysoi.sh` (tai `analysoi.py`), joka selvittää repositoryssa käytetyt ohjelmointikielet (esim. `.py`, `.js`, `.java`, `.ts` jne.)
 
-### Selvitä repositoryssa käytetyt ohjelmointikielet
-
-*   analysoida tiedostopäätteitä käsin  
-    (esim. `.py`, `.js`, `.java`, `.ts` jne.)
-
-Esimerkki erittäin yksinkertaisesta shell-tavasta:
+Esimerkki yksinkertaisesta shell-tavasta:
 
 ```bash
 echo "Detected languages:"
@@ -161,7 +156,7 @@ find . -type f -name "*.ts" | grep -q . && echo "- TypeScript"
 
 ### Havaitsee yleisiä suunnittelumalleja
 
-Tuloksen ei tarvitse olla täydellinen — tavoitteena on **heuristiikkapohjainen** tunnistus.
+Tuloksen ei tarvitse olla täydellinen, tavoitteena on **heuristiikkapohjainen** tunnistus.
 
 Esimerkki heuristiikoista:
 
@@ -191,7 +186,10 @@ Raportin voi myös generoida markdown-muotoon.
 
 *   Raportti tulostetaan GitHub Actions -lokiin
 *   Raportti tallennetaan tiedostoon `analysis_report.txt` kohdan 2.2. mukaisesti
-*   Tiedosto tallennetaan artefaktiksi (vapaaehtoinen)
+*   Tiedosto tallennetaan artefaktiksi ja laitetaan viikon 2 linkiksi. Linkin löytää GitHub Actions -lokin lopusta kohdasta (tämä linkin lisääminen on vapaaehtoinen ja sitä ei arvioida)
+```
+Artifact download URL: https://github.com/{oma_tunnus}/{oma_repo}/actions/runs/23796709182/artifacts/6198870044
+```
 
 # 🎓 **Palautettava materiaali**
 
