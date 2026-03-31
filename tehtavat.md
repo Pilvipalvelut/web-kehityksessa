@@ -81,7 +81,126 @@ h1 {
 ##
 
 ### 2. Tehtävä
-TBD
+**Tehtävä: Koodikielen ja suunnittelumallien automaattinen tunnistus GitHub Actionsilla**
+
+🎯 **Oppimistavoitteet**
+
+Tämän tehtävän suoritettuaan opiskelija osaa:
+
+*   Rakentaa GitHub Actions -workflow ja konfiguroida sen ajastuksen ja/tai tapahtumatriggerin mukaan
+*   Kirjoittaa skriptin, joka analysoi GitHub-repositorion sisältöä
+*   Tunnistaa koodin ohjelmointikielen (tai kielet)
+*   Etsiä yleisiä suunnittelumalleja (design patterns) koodista
+*   Tuottaa analyysin workflow’n lokiin ja mahdollisesti artefaktiksi
+
+## 📝 **Tehtävän kuvaus**
+
+Luo GitHub-repositorioon automaattinen analysointijärjestelmä, joka:
+
+1.  **Tunnistaa repositoriossa käytetyt ohjelmointikielet**
+2.  **Tarkistaa, esiintyykö koodissa klassisia ohjelmistosuunnittelun malleja**  
+    (esim. Singleton, Factory Method, Strategy, Observer, Decorator)
+3.  **Tulostaa analyysiraportin** GitHub Actions -workflow’n lokiin  
+    – ja valinnaisesti tallentaa sen artefaktiksi.
+
+# 🛠️ **Tekniset vaatimukset**
+
+2.1. GitHub Actions -workflow
+
+Luo hakemistoon `.github/workflows/` tiedosto nimeltä esimerkiksi `analysis.yml`, joka:
+
+*   Ajoitetaan suoritettavaksi aina kun:
+    *   koodia pusketaan (`push`)
+    *   tehdään `pull_request`
+*   Suorittaa opiskelijan kirjoittaman analyysiskriptin
+
+Esimerkki workflow-runnerista (opiskelijat muokkaavat itse tarpeidensa mukaan):
+
+```yaml
+name: Repository Analysis
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run analysis script
+        run: |
+          chmod +x analysoi.sh
+          ./analysoi.sh
+
+      - name: Upload report
+        uses: actions/upload-artifact@v4
+        with:
+          name: analysis-report
+          path: analysis_report.txt
+```
+
+2.2. Analyysiskripti
+
+Tee repositorioon tiedosto `analysoi.sh` (tai `analysoi.py`, jos haluat antaa vaihtoehdon), joka:
+
+### Selvittää käytetyt ohjelmointikielet
+
+Vaihtoehtoja:
+
+*   lukea GitHubin automaattisesti generoimaa `languages`-tietoa (esim. `gh` CLI tai lukemalla kooditiedostojen päätteitä)
+*   analysoida tiedostopäätteitä käsin  
+    (esim. `.py`, `.js`, `.java`, `.cpp` jne.)
+
+Esimerkki erittäin yksinkertaisesta shell-tavasta:
+
+```bash
+echo "Detected languages:"
+find . -type f -name "*.py" | grep -q . && echo "- Python"
+find . -type f -name "*.java" | grep -q . && echo "- Java"
+find . -type f -name "*.js" | grep -q . && echo "- JavaScript"
+```
+
+### Havaitsee yleisiä suunnittelumalleja
+
+Tämä ei tarvitse olla täydellinen — tavoitteena on **heuristiikkapohjainen** tunnistus.
+
+Esimerkki heuristiikoista:
+
+| Suunnittelumalli | Heuristiikka                                                          |
+| ---------------- | --------------------------------------------------------------------- |
+| Singleton        | Tiedosto sisältää sanan `getInstance` tai `static instance`           |
+| Factory Method   | Esiintyy `create*` tai `factory`                                      |
+| Strategy         | Luokkanimi *Strategy* tai hakusana `interface` tietyissä tiedostoissa |
+| Observer         | Esiintyy sanat `notify`, `subscribe`, `observer`                      |
+| Decorator        | Luokkanimissä esiintyy *Decorator*, tai “wrap”-tyyppisiä metodeja     |
+
+Esimerkki shell-heuristiikasta:
+
+```bash
+echo "Design patterns detected:" > analysis_report.txt
+
+grep -R "getInstance" -n . && echo "- Singleton" >> analysis_report.txt
+grep -R "create[A-Z]" -n . && echo "- Factory Method" >> analysis_report.txt
+grep -R "notify" -n . && echo "- Observer" >> analysis_report.txt
+grep -R "Strategy" -n . && echo "- Strategy" >> analysis_report.txt
+grep -R "Decorator" -n . && echo "- Decorator" >> analysis_report.txt
+```
+
+Raportin voi myös generoida markdown-muotoon.
+
+2.3. Raportointi
+
+*   Raportti tulostetaan GitHub Actions -lokiin
+*   Raportti tallennetaan tiedostoon `analysis_report.txt`
+*   Tiedosto tallennetaan artefaktiksi (vapaaehtoinen)
+
+# 🎓 **Palautettava materiaali**
+
+Palautuksena tehtävästä on Teams-kanavalle **GitHub-repositorion linkki**, jossa on workflow-tiedosto `.github/workflows/analysis.yml`
+
 ##
 
 ### 3. Tehtävä
