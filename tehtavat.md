@@ -213,7 +213,7 @@ Opiskelija osaa:
 Luo uusi React-projekti käyttäen Viteä:
 
 ```bash
-npm create vite@latest your-project --template react
+npm create vite@latest [Oman-projektin-nimi]
 ```
 
 Asenna riippuvuudet:
