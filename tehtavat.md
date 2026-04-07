@@ -196,8 +196,81 @@ Palautuksena tehtävästä on Teams-kanavalle **GitHub-repositorion linkki**, jo
 
 ##
 
-### 3. Tehtävä
-TBD
+### 3. Tehtävä Vite + React -sovellus Local Storagella
+
+## ✅ Oppimistavoitteet
+
+Opiskelija osaa:
+
+*   Luoda Vite-pohjaisen React-projektin
+*   Rakentaa käyttöliittymäkomponentteja modernilla Reactilla
+*   Tallentaa ja noutaa dataa Local Storagesta
+*   Toteuttaa Firebase Authentication
+
+## 📘 Tehtävänanto
+
+3.1. Projektin luominen
+
+Luo uusi React-projekti käyttäen Viteä:
+
+```bash
+npm create vite@latest your-project --template react
+```
+
+Asenna riippuvuudet:
+
+```bash
+npm install
+```
+
+3.2. Sovelluksen toiminnallinen idea
+
+Tee pieni sovellus, joka:
+
+1.  **Generoi käyttäjälle hauskan koodinimen** (esim. *SneakyPanda42*).
+2.  **Tallentaa tämän koodinimen Local Storageen.**
+3.  **Kun käyttäjä kirjautuu sisään**, sovellus:
+    *   hakee Local Storagesta käyttäjän aiemmin luodun koodinimen (jos olemassa)
+    *   jos koodinimeä ei ole, generoi uuden ja tallentaa sen
+4.  Näyttää kirjautuneelle käyttäjälle:
+    *   sovelluksen generoiman koodinimen
+
+3.3. Koodinimen generointi
+
+Toteuta funktio, joka luo satunnaisen ja hauskan koodinimen.
+
+Esimerkkitoteutus (opiskelija saa tehdä oman):
+
+```js
+function generateCodename() {
+  const adjectives = ["Sneaky", "Electric", "Silent", "Hyper", "Cosmic"];
+  const animals = ["Fox", "Panda", "Lizard", "Dragon", "Hawk"];
+  const number = Math.floor(Math.random() * 3000);
+
+  const adj = adjectives[Math.floor(Math.random() * adjectives.length)];
+  const animal = animals[Math.floor(Math.random() * animals.length)];
+
+  return `${adj}${animal}${number}`;
+}
+```
+
+3.4. Local Storage ‑tallennus
+
+Sovelluksen tulee:
+
+*   tallentaa koodinimi:
+    ```js
+    localStorage.setItem("codename", codename);
+    ```
+*   hakea koodinimi:
+    ```js
+    const cachedName = localStorage.getItem("codename");
+    ```
+
+# 🎓 **Palautettava materiaali**
+
+Palautuksena tehtävästä on Teams-kanavalle **GitHub-repositorion linkki**, jossa on Vite-sovellus nähtävissä
+
 ##
 
 ### 4. Tehtävä
@@ -205,7 +278,65 @@ TBD
 ##
 
 ### 5. Tehtävä
-TBD
+
+5.1. Firebase-konfiguraatio
+
+Luo Firebase-projektin ja ottaa käyttöön:
+
+✅ Authentication → **Google provider**  
+✅ Web app → konfiguraatio  
+✅ `firebase/auth`
+
+Esimerkki alustuksesta:
+
+```js
+import { initializeApp } from "firebase/app";
+import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+
+const firebaseConfig = {
+  apiKey: "…",
+  authDomain: "…",
+  projectId: "…",
+};
+
+const app = initializeApp(firebaseConfig);
+export const auth = getAuth(app);
+export const provider = new GoogleAuthProvider();
+```
+
+5.2. Käyttäjän sisäänkirjautuminen
+
+Rakenna komponentti jossa on:
+
+*   "Kirjaudu" -painike
+*   kirjautumisen jälkeen tehtävän 3 koodinimen näyttö
+
+Esimerkkipohja:
+
+```js
+const login = async () => {
+  const result = await signInWithPopup(auth, provider);
+  setUser(result.user);
+
+  let name = localStorage.getItem("codename");
+  if (!name) {
+    name = generateCodename();
+    localStorage.setItem("codename", name);
+  }
+
+  setCodename(name);
+};
+```
+
+Arviointikriteerit
+
+| Arviointikohta              | Kuvaus                                                         |
+| --------------------------- | -------------------------------------------------------------- |
+| **Tekninen toimivuus**      | Projekti käynnistyy, React- ja Firebase-osat toimivat          |
+| **Koodin rakenne**          | Selkeät komponentit, ei turhaa logiikkaa renderissä            |
+| **Local Storage -logiikka** | Uusi ja vanha koodinimi käsitellään oikein                     |
+| **Firebase Authentication** | Google‑kirjautuminen toimii ja käyttäjätiedot näkyvät          |
+
 ##
 
 ### 6. Tehtävä
