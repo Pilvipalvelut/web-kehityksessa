@@ -205,7 +205,6 @@ Opiskelija osaa:
 *   Luoda Vite-pohjaisen React-projektin
 *   Rakentaa käyttöliittymäkomponentteja modernilla Reactilla
 *   Tallentaa ja noutaa dataa Local Storagesta
-*   Toteuttaa Firebase Authentication
 
 ## 📘 Tehtävänanto
 
@@ -239,7 +238,7 @@ Tee pieni sovellus, joka:
 
 Toteuta funktio, joka luo satunnaisen ja hauskan koodinimen.
 
-Esimerkkitoteutus (opiskelija saa tehdä oman):
+Esimerkkitoteutus:
 
 ```js
 function generateCodename() {
