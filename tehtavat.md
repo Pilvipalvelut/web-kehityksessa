@@ -392,15 +392,14 @@ Toteuta `src/authService.ts` -palvelu
 
 ```ts
 import {
+  getAuth,
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
   signOut,
   User,
   UserCredential,
 } from "firebase/auth";
-
 import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
 import firebaseConfig from "../firebaseConfig";
 
 const app = initializeApp(firebaseConfig);
