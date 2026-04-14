@@ -421,7 +421,7 @@ export const loginWithEmail = async (
 };
 
 /**
- * Käyttäjän rekisteröinti (valinnainen, mutta hyvä mukaan tehtävään)
+ * Käyttäjän rekisteröinti (Ei tässä tehtävässä välttämätön)
  */
 export const registerWithEmail = async (
   email: string,
