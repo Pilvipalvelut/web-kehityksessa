@@ -273,58 +273,284 @@ Palautuksena tehtävästä on Teams-kanavalle **GitHub-repositorion linkki**, jo
 ##
 
 ### 4. Tehtävä
-TBD
-##
+4.1. Firebase‑projektin luominen
 
-### 5. Tehtävä
+### Firebase Console
 
-5.1. Firebase-konfiguraatio
+1.  Mene osoitteeseen **<https://console.firebase.google.com>**
+2.  Valitse **Create project**
+3.  Anna projektille nimi (esim. `vite-pilvi`)
+4.  Ota Google Analytics **pois päältä**
+5.  Luo projekti
 
-Luo Firebase-projektin ja ottaa käyttöön:
+✅ Tässä vaiheessa Firebase‑projekti on olemassa, mutta mitään palveluja ei ole vielä käytössä.
 
-✅ Authentication → **Google provider**  
-✅ Web app → konfiguraatio  
-✅ `firebase/auth`
+4.2. Web‑sovelluksen rekisteröinti Firebaseen
 
-Esimerkki alustuksesta:
+Firebase tarvitsee tiedon siitä, että projektia käytetään **web‑sovelluksesta**.
 
-```js
-import { initializeApp } from "firebase/app";
-import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+1.  Firebase Consolessa:
+    *   Project Overview → **Add app**
+    *   Valitse **Web (\</>)**
+2.  Anna sovellukselle nimi (esim. `websovellus`)
+3.  Firebase näyttää konfiguraation:
 
+```ts
 const firebaseConfig = {
   apiKey: "…",
   authDomain: "…",
   projectId: "…",
+  messagingSenderId: "…",
+  appId: "…"
+};
+```
+
+👉 **Tämä konfiguraatio tarvitaan React‑sovelluksessa.**
+
+4.3. Google‑kirjautumisen aktivointi Firebase Authissa
+
+### Autentikaation käyttöönotto
+
+1.  Firebase Console → **Build → Authentication**
+2.  Valitse **Get started**
+
+### Kirjautumistavan lisääminen
+
+1.  Authentication → **Sign‑in method**
+2.  Valitse **Email/Password**
+3.  **Enable**
+4.  Aseta:
+    *   Project support email (pakollinen)
+5.  Save
+
+✅ Firebase osaa nyt tunnistaa Google‑käyttäjiä.
+
+4.4. Vite + React ‑sovelluksen luonti (Jos sitä ei ole tehnyt 3. tehtävässä)
+
+Komentorivillä:
+
+```bash
+npm create vite@latest [Oman-projektin-nimi]
+cd [Oman-projektin-nimi]
+npm install
+npm run dev
+```
+
+4.5. Firebase‑kirjastojen asentaminen
+
+Reactissa käytetään Firebase v9+ **SDK:ta**. Aja komentorivillä projektin juurikansiossa:
+
+```bash
+npm install firebase
+```
+
+4.6. Firebase‑konfiguraation eriyttäminen
+
+Tiedostorakenne (esimerkki)
+
+```txt
+src/
+ ├─ App.tsx
+ └─ main.tsx
+ └─ LoginForm.ts
+ └─ authService.ts
+
+firebaseConfig.ts
+.env
+```
+
+Tiedostossa `firebaseConfig.ts` otetaan käyttöön Firebasesta saadut konfiguraatiot:
+
+```ts
+import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
+
+const firebaseConfig = {
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
 
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
-export const provider = new GoogleAuthProvider();
 ```
 
-5.2. Käyttäjän sisäänkirjautuminen
+4.7. Ympäristömuuttujat
 
-Rakenna komponentti jossa on:
+`.env` -tiedoston luonti projektin juureen
 
-*   "Kirjaudu" -painike
-*   kirjautumisen jälkeen tehtävän 3 koodinimen näyttö
+```env
+VITE_FIREBASE_API_KEY=xxxx
+VITE_FIREBASE_AUTH_DOMAIN=xxxx
+VITE_FIREBASE_PROJECT_ID=xxxx
+VITE_FIREBASE_MESSAGING_ID=xxxx
+VITE_FIREBASE_APP_ID=xxxx
+```
 
-Esimerkkipohja:
+🔹 Vite vaatii `VITE_`‑etuliitteen  
+🔹 `.env` -tiedostoa **ei viedä** versionhallintaan. Sen voi laittaa tiedoksi `.gitignore` -tiedostoon.
 
-```js
-const login = async () => {
-  const result = await signInWithPopup(auth, provider);
-  setUser(result.user);
+4.8. Google‑kirjautumisen ohjelmallinen toteutus
 
-  let name = localStorage.getItem("codename");
-  if (!name) {
-    name = generateCodename();
-    localStorage.setItem("codename", name);
-  }
+Toteuta `src/authService.ts` -palvelu
 
-  setCodename(name);
+```ts
+import {
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
+  signOut,
+  User,
+  UserCredential,
+} from "firebase/auth";
+
+import { auth } from "../firebaseConfig";
+
+/**
+ * Kirjautuminen sähköposti + salasana
+ */
+export const loginWithEmail = async (
+  email: string,
+  password: string
+): Promise<User> => {
+  const result: UserCredential = await signInWithEmailAndPassword(
+    auth,
+    email,
+    password
+  );
+  return result.user;
 };
+
+/**
+ * Käyttäjän rekisteröinti (valinnainen, mutta hyvä mukaan tehtävään)
+ */
+export const registerWithEmail = async (
+  email: string,
+  password: string
+): Promise<User> => {
+  const result: UserCredential = await createUserWithEmailAndPassword(
+    auth,
+    email,
+    password
+  );
+  return result.user;
+};
+
+/**
+ * Kirjautuminen ulos
+ */
+export const logout = async (): Promise<void> => {
+  await signOut(auth);
+};
+```
+
+4.9. Kirjautumislomake (React + TypeScript)
+
+Toteuta `src/LoginForm.tsx` -lomake
+
+```tsx
+import { useState } from "react";
+import { loginWithEmail } from "./authService";
+
+const LoginForm = () => {
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState<boolean>(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError(null);
+    setLoading(true);
+
+    try {
+      await loginWithEmail(email, password);
+    } catch (err: unknown) {
+      if (err instanceof Error) {
+        setError(err.message);
+      } else {
+        setError("Tuntematon virhe");
+      }
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <h2>Kirjaudu sisään</h2>
+
+      <div>
+        <label>Sähköposti</label>
+        <input
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+      </div>
+
+      <div>
+        <label>Salasana</label>
+        <input
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
+      </div>
+
+      {error && <p style={{ color: "red" }}>{error}</p>}
+
+      <button type="submit" disabled={loading}>
+        {loading ? "Kirjaudutaan..." : "Kirjaudu"}
+      </button>
+    </form>
+  );
+};
+
+export default LoginForm;
+```
+
+4.10. Lomakkeen liittäminen App‑komponenttiin
+
+Firebase ylläpitää käyttäjän tilaa **automaattisesti**, mutta React tarvitsee kuuntelijan.
+`onAuthStateChanged` voidaan laittaa vaikka `src/App.tsx` -tiedostoon seuraavasti: 
+
+```tsx
+import { useEffect, useState } from "react";
+import { onAuthStateChanged, User } from "firebase/auth";
+import { auth } from "../firebaseConfig";
+import LoginForm from "./LoginForm";
+import { logout } from "./authService";
+
+function App() {
+  const [user, setUser] = useState<User | null>(null);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (firebaseUser) => {
+      setUser(firebaseUser);
+    });
+
+    return () => unsubscribe();
+  }, []);
+
+  return (
+    <div>
+      {user ? (
+        <>
+          <p>👋 Tervetuloa, {user.email}</p>
+          <button onClick={logout}>Kirjaudu ulos</button>
+        </>
+      ) : (
+        <LoginForm />
+      )}
+    </div>
+  );
+}
+
+export default App;
 ```
 
 Arviointikriteerit
@@ -335,7 +561,14 @@ Arviointikriteerit
 | **Koodin rakenne**          | Selkeät komponentit, ei turhaa logiikkaa renderissä            |
 | **Local Storage -logiikka** | Uusi ja vanha koodinimi käsitellään oikein                     |
 | **Firebase Authentication** | Google‑kirjautuminen toimii ja käyttäjätiedot näkyvät          |
+# 🎓 **Palautettava materiaali**
 
+Palautuksena tehtävästä on Teams-kanavalle **GitHub-repositorion linkki** ja **GitHub Pages -sivuston linkki**, jossa on Vite-sovellus toimivana
+
+##
+
+### 5. Tehtävä
+TBD
 ##
 
 ### 6. Tehtävä
