@@ -339,7 +339,7 @@ npm run dev
 Reactissa käytetään Firebase **SDK:ta**, uusin on versio 12. Aja komentorivillä projektin juurikansiossa:
 
 ```bash
-npm install firebase@latest
+npm install firebase
 ```
 
 4.5. Firebase‑konfiguraation eriyttäminen
@@ -397,7 +397,7 @@ import {
   createUserWithEmailAndPassword,
   signOut,
   User,
-  UserCredential,
+  UserCredential
 } from "firebase/auth";
 import { initializeApp } from "firebase/app";
 import firebaseConfig from "../firebaseConfig";
