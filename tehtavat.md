@@ -555,14 +555,20 @@ function App() {
 export default App;
 ```
 
+4.10. Koodinimen hakeminen Local Storagesta
+
+Muuta vielä `src/App.tsx` -tiedostoa niin että kun käyttäjä kirjautuu Firebase Authilla sisään, sovellus hakee tai luo käyttäjälle uniikin koodinimen Local Storagesta käyttäen Firebase UID:tä avaimena ja näyttää sen kohdassa
+```Tervetuloa, {codename}```
+
+
 Arviointikriteerit
 
 | Arviointikohta              | Kuvaus                                                         |
 | --------------------------- | -------------------------------------------------------------- |
 | **Tekninen toimivuus**      | Projekti käynnistyy, React- ja Firebase-osat toimivat          |
 | **Koodin rakenne**          | Selkeät komponentit, ei turhaa logiikkaa renderissä            |
-| **Local Storage -logiikka** | Uusi ja vanha koodinimi käsitellään oikein                     |
-| **Firebase Authentication** | Google‑kirjautuminen toimii ja käyttäjätiedot näkyvät          |
+| **Local Storage -logiikka** | Käyttäjän koodinimi käsitellään oikein                         |
+| **Firebase Authentication** | Firebase‑kirjautuminen toimii ja käyttäjätiedot näkyvät        |
 # 🎓 **Palautettava materiaali**
 
 Palautuksena tehtävästä on Teams-kanavalle **GitHub-repositorion linkki** ja **GitHub Pages -sivuston linkki**, jossa on Vite-sovellus toimivana
