@@ -255,13 +255,13 @@ function generateCodename() {
 
 3.4. Local Storage ‑tallennus
 
-Sovelluksen tulee:
+Sovelluksessa tulee olla seuraavat ominaisuudet:
 
-*   tallentaa koodinimi:
+*   Koodinimen tallentaminen Local Storageen:
     ```js
     localStorage.setItem("codename", codename);
     ```
-*   hakea koodinimi:
+*   Koodinimen hakeminen Local Storagesta:
     ```js
     const cachedName = localStorage.getItem("codename");
     ```
@@ -272,8 +272,7 @@ Palautuksena tehtävästä on Teams-kanavalle **GitHub-repositorion linkki**, jo
 
 ##
 
-### 4. Tehtävä
-4.1. Firebase‑projektin luominen
+### 4. Tehtävä Firebase‑projektin luominen
 
 ### Firebase Console
 
@@ -285,7 +284,7 @@ Palautuksena tehtävästä on Teams-kanavalle **GitHub-repositorion linkki**, jo
 
 ✅ Tässä vaiheessa Firebase‑projekti on olemassa, mutta mitään palveluja ei ole vielä käytössä.
 
-4.2. Web‑sovelluksen rekisteröinti Firebaseen
+4.1. Web‑sovelluksen rekisteröinti Firebaseen
 
 Firebase tarvitsee tiedon siitä, että projektia käytetään **web‑sovelluksesta**.
 
@@ -307,7 +306,7 @@ const firebaseConfig = {
 
 👉 **Tämä konfiguraatio tarvitaan React‑sovelluksessa.**
 
-4.3. Google‑kirjautumisen aktivointi Firebase Authissa
+4.2. Google‑kirjautumisen aktivointi Firebase Authissa
 
 ### Autentikaation käyttöönotto
 
@@ -324,7 +323,7 @@ const firebaseConfig = {
 
 ✅ Firebase osaa nyt tunnistaa Google‑käyttäjiä. Tee uusi käyttäjä välilehdellä Users.
 
-4.4. Vite + React ‑sovelluksen luonti (Jos sitä ei ole tehnyt 3. tehtävässä)
+4.3. Vite + React ‑sovelluksen luonti (Jos sitä ei ole tehnyt 3. tehtävässä)
 
 Komentorivillä:
 
@@ -335,7 +334,7 @@ npm install
 npm run dev
 ```
 
-4.5. Firebase‑kirjastojen asentaminen
+4.4. Firebase‑kirjastojen asentaminen
 
 Reactissa käytetään Firebase **SDK:ta**, uusin on versio 12. Aja komentorivillä projektin juurikansiossa:
 
@@ -343,7 +342,7 @@ Reactissa käytetään Firebase **SDK:ta**, uusin on versio 12. Aja komentorivil
 npm install firebase@latest
 ```
 
-4.6. Firebase‑konfiguraation eriyttäminen
+4.5. Firebase‑konfiguraation eriyttäminen
 
 Tiedostorakenne (esimerkki)
 
@@ -372,7 +371,7 @@ const firebaseConfig = {
 export default firebaseConfig;
 ```
 
-4.7. Ympäristömuuttujat
+4.6. Ympäristömuuttujat
 
 `.env` -tiedoston luonti projektin juureen
 
@@ -387,7 +386,7 @@ VITE_FIREBASE_APP_ID=xxxx
 🔹 Vite vaatii `VITE_`‑etuliitteen  
 🔹 `.env` -tiedostoa **ei viedä** versionhallintaan. Sen voi laittaa tiedoksi `.gitignore` -tiedostoon.
 
-4.8. Google‑kirjautumisen ohjelmallinen toteutus
+4.7. Google‑kirjautumisen ohjelmallinen toteutus
 
 Toteuta `src/authService.ts` -palvelu
 
@@ -444,7 +443,7 @@ export const logout = async (): Promise<void> => {
 };
 ```
 
-4.9. Kirjautumislomake (React + TypeScript)
+4.8. Kirjautumislomake (React + TypeScript)
 
 Toteuta `src/LoginForm.tsx` -lomake
 
@@ -512,7 +511,7 @@ const LoginForm = () => {
 export default LoginForm;
 ```
 
-4.10. Lomakkeen liittäminen App‑komponenttiin
+4.9. Lomakkeen liittäminen App‑komponenttiin
 
 Firebase ylläpitää käyttäjän tilaa **automaattisesti**, mutta React tarvitsee kuuntelijan.
 `onAuthStateChanged` voidaan laittaa vaikka `src/App.tsx` -tiedostoon seuraavasti: 
