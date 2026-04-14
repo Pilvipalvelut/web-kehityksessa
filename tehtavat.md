@@ -338,10 +338,10 @@ npm run dev
 
 4.5. Firebase‑kirjastojen asentaminen
 
-Reactissa käytetään Firebase v9+ **SDK:ta**. Aja komentorivillä projektin juurikansiossa:
+Reactissa käytetään Firebase **SDK:ta**, uusin on versio 12. Aja komentorivillä projektin juurikansiossa:
 
 ```bash
-npm install firebase
+npm install firebase@latest
 ```
 
 4.6. Firebase‑konfiguraation eriyttäminen
@@ -362,9 +362,6 @@ firebaseConfig.ts
 Tiedostossa `firebaseConfig.ts` otetaan käyttöön Firebasesta saadut konfiguraatiot:
 
 ```ts
-import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
-
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
   authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
@@ -373,8 +370,7 @@ const firebaseConfig = {
   appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
 
-const app = initializeApp(firebaseConfig);
-export const auth = getAuth(app);
+export default firebaseConfig;
 ```
 
 4.7. Ympäristömuuttujat
@@ -405,8 +401,12 @@ import {
   UserCredential,
 } from "firebase/auth";
 
-import { auth } from "../firebaseConfig";
+import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
+import firebaseConfig from "../firebaseConfig";
 
+const app = initializeApp(firebaseConfig);
+export const auth = getAuth(app);
 /**
  * Kirjautuminen sähköposti + salasana
  */
@@ -521,9 +521,8 @@ Firebase ylläpitää käyttäjän tilaa **automaattisesti**, mutta React tarvit
 ```tsx
 import { useEffect, useState } from "react";
 import { onAuthStateChanged, User } from "firebase/auth";
-import { auth } from "../firebaseConfig";
 import LoginForm from "./LoginForm";
-import { logout } from "./authService";
+import { auth, logout } from "./authService";
 
 function App() {
   const [user, setUser] = useState<User | null>(null);
@@ -537,6 +536,9 @@ function App() {
   }, []);
 
   return (
+
+    // Paljon muuta renderöitävää
+
     <div>
       {user ? (
         <>
@@ -548,6 +550,9 @@ function App() {
       )}
     </div>
   );
+
+  // Paljon muuta koodia
+
 }
 
 export default App;
