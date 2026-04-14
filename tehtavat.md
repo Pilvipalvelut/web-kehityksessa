@@ -317,13 +317,12 @@ const firebaseConfig = {
 ### Kirjautumistavan lisääminen
 
 1.  Authentication → **Sign‑in method**
-2.  Valitse **Email/Password**
-3.  **Enable**
-4.  Aseta:
-    *   Project support email (pakollinen)
+2.  Valitse **Add new provider**
+3.  Valitse **Email/Password**
+4.  Vaihda kytkimestä **Enable**
 5.  Save
 
-✅ Firebase osaa nyt tunnistaa Google‑käyttäjiä.
+✅ Firebase osaa nyt tunnistaa Google‑käyttäjiä. Tee uusi käyttäjä välilehdellä Users.
 
 4.4. Vite + React ‑sovelluksen luonti (Jos sitä ei ole tehnyt 3. tehtävässä)
 
