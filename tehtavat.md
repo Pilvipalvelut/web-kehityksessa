@@ -988,8 +988,6 @@ Esimerkiksi:
 *   lähin arvaus voittaa
 *   tai: `score += max(0, 100 - |arvaus - oikea hinta|)`
 
-# 3️⃣ Miten nykyiset komponentit asettuvat tehtävään
-
 | Komponentti         | Rooli tehtävässä               |
 | ------------------- | ------------------------------ |
 | `App.tsx`           | Orkestroi auth + nykyinen peli |
