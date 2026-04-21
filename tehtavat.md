@@ -583,7 +583,7 @@ Lisänä tulisi peruskomponentit:
 *   RoundResult (kierroksen tulos)
 *   App.tsx, joka yhdistää nämä
 
-Tehtäväsi on laajentaa tästä toimiva 2–4 pelaajan moninpelipeli, jossa arvataan tuotteiden hintoja.
+Tehtäväsi on laajentaa tästä toimiva 2–4 pelaajan moninpeli, jossa arvataan tuotteiden hintoja.
 
 `src/App.tsx` – sovelluksen orkestroija:
 *   hoitaa **Firebase Authenticationin**
@@ -789,7 +789,7 @@ export default App
 Puuttuu:
 
 *   tuotteen tiedot (vain nimi, ei kuvaa)
-*   pelin vaiheiden selkeä käsittely (`guessing` vs `resolved`)
+*   pelin vaiheiden selkeä käsittely (`playing` vs `finished`)
 
 ```ts
 import { useState } from 'react';
@@ -929,7 +929,7 @@ Rakenna peli vaiheisiin:
     *   pelaajat liittyvät
     *   peli ei ala ennen kuin vähintään 2 pelaajaa
 
-2.  **Guessing**
+2.  **Playing**
     *   näytetään tuotteen nimi (ja halutessa kuva)
     *   `QuizForm` aktiivinen
 
