@@ -575,8 +575,177 @@ Palautuksena tehtävästä on Teams-kanavalle **GitHub-repositorion linkki** ja 
 
 ##
 
-### 5. Tehtävä
-TBD
+### 5. Tehtävä Moninpelinä toimiva hintavisa (Vite + React + Firebase)
+React + Vite ‑projekti
+Firebase Authentication (email + password)
+peruskomponentit:
+
+QuizForm (arvaus)
+RoundResult (kierroksen tulos)
+
+
+alustava App.tsx, joka yhdistää nämä
+
+Tehtäväsi on laajentaa tästä toimiva 2–4 pelaajan moninpelipeli, jossa arvataan tuotteiden hintoja.
+
+`src/App.tsx` – sovelluksen orkestroija:
+*   hoitaa **Firebase Authenticationin**
+*   luo **yksittäisen pelisession** (`createSession`)
+*   välittää funktiota `submitGuess`
+*   renderöi `QuizForm`‑komponentin
+
+📌 Tämä tiedosto on hyvä **lähtöpiste**.
+
+
+`src/components/QuizForm.tsx` – arvauslomake:
+*   sisältää lomakkeen hinnan arvaamiseen
+*   käyttää `useState` vain paikalliseen inputtiin
+*   kutsuu `onSubmitGuess`
+
+Hyvää:
+
+*   ✅ komponentti on lähes stateless
+*   ✅ sopii hyvin “arvausvaiheeksi”
+
+Puuttuu:
+
+*   tuotteen tiedot (vain nimi, ei kuvaa)
+*   pelin vaiheiden selkeä käsittely (`guessing` vs `resolved`)
+
+
+`src/components/RoundResult.tsx` – kierroksen tulos näyttää:
+*   näyttää:
+    *   oikean hinnan
+    *   kaikkien pelaajien arvaukset ja erot
+
+Tämä on pedagogisesti **erittäin hyvä komponentti**, koska:
+
+*   se on puhdas presentaatio
+*   ei Firestorea
+*   ei React‑statea
+
+5.1: Pelin tietomallit 
+
+👉 Luo TypeScript‑tyypit:
+
+*   `Player`
+*   `Game` tai `Session`
+
+Vähimmäisvaatimukset:
+
+```ts
+Player:
+- uid / codename
+- score
+- guess
+
+Game / Session:
+- status ("waiting" | "playing" | "finished")
+- players: Player[]
+- currentRound
+- correctPrice?
+```
+
+📌 **Huom:**  
+Firestore EI salli `undefined`‑arvoja – huomioi tämä tietomallissa.
+
+5.2. Firestore‑integraatio
+
+Toteuta Firestore‑logiikka erillisiin tiedostoihin (ei React‑komponentteihin):
+
+*   ✅ pelin luonti
+*   ✅ pelin tallennus
+*   ✅ pelin haku
+*   ✅ reaaliaikainen kuuntelu (`onSnapshot`)
+
+Vaatimus:
+
+*   peli päivittyy samanaikaisesti kaikille pelaajille
+
+5.3. Pelin elinkaaren hallinta
+
+Rakenna peli vaiheisiin:
+
+1.  **Waiting**
+    *   pelaajat liittyvät
+    *   peli ei ala ennen kuin vähintään 2 pelaajaa
+
+2.  **Guessing**
+    *   näytetään tuotteen nimi (ja halutessa kuva)
+    *   `QuizForm` aktiivinen
+
+3.  **Finished**
+    *   voittaja näytetään
+
+📌 Tämä voidaan toteuttaa:
+
+*   `status`‑kentällä
+*   tai yksinkertaisella tilakoneella
+```ts
+export type SessionStatus = "waiting" | "playing" | "finished";
+
+export type Session = {
+    id: string;
+    sessionName: string;
+    scores: Record<string, number>; // playerId -> score
+    currentRound: number;
+    currentGame?: string;
+    status: SessionStatus;
+    createdAt: unknown;
+    createdBy: unknown;
+    lastActivity?: unknown;
+};
+```
+
+5.4. Ulkoinen rajapinta (DummyJSON)
+
+Hae jokaiselle kierrokselle:
+
+*   satunnainen tuote osoitteesta  
+    👉 <https://dummyjson.com/products>
+
+```ts
+async function fetchRandomProduct() {
+    const res = await fetch("https://dummyjson.com/products");
+    const data = await res.json();
+
+    const products = data.products;
+    const randomIndex = Math.floor(Math.random() * products.length);
+    const product: Product = products[randomIndex];
+    return product;
+}
+```
+
+Vaatimukset:
+
+*   tuotteen hintaa ei näytetä ennen kierroksen ratkaisua
+*   hinta tallennetaan Firestoreen
+
+
+5.5: Pisteytys
+
+Esimerkiksi:
+
+*   lähin arvaus voittaa
+*   tai: `score += max(0, 100 - |arvaus - oikea hinta|)`
+
+# 3️⃣ Miten nykyiset komponentit asettuvat tehtävään
+
+| Komponentti         | Rooli tehtävässä               |
+| ------------------- | ------------------------------ |
+| `App.tsx`           | Orkestroi auth + nykyinen peli |
+| `QuizForm`          | Arvausvaihe                    |
+| `RoundResult`       | Kierroksen tulos               |
+| Firestore‑tiedostot | Pelilogiikka                   |
+| Custom hookit       | Reaaliaikaisuus                |
+
+📌 
+
+
+# 🎓 **Palautettava materiaali**
+
+Palautuksena tehtävästä on Teams-kanavalle **GitHub-repositorion linkki** ja **GitHub Pages -sivuston linkki**, jossa on Vite-sovellus toimivana
+
 ##
 
 ### 6. Tehtävä
