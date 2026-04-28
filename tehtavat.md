@@ -981,7 +981,7 @@ Vaatimukset:
 *   hinta tallennetaan Firestoreen
 
 
-5.5: Pisteytys
+5.5. Pisteytys
 
 Esimerkiksi:
 
@@ -996,15 +996,159 @@ Esimerkiksi:
 | Firestore‑tiedostot | Pelilogiikka                   |
 | Custom hookit       | Reaaliaikaisuus                |
 
-📌 
-
-
 # 🎓 **Palautettava materiaali**
 
 Palautuksena tehtävästä on Teams-kanavalle **GitHub-repositorion linkki** ja **GitHub Pages -sivuston linkki**, jossa on Vite-sovellus toimivana
 
 ##
 
-### 6. Tehtävä
-TBD
-##
+### 6. Tehtävä Cloudflare Web Analytics
+
+🎯 **Oppimistavoitteet**
+
+Tämän tehtävän suoritettuaan opiskelija osaa:
+
+* Integroida Cloudflare Web Analytics -analytiikan JavaScript beaconilla
+
+6.1. Sovelluksen toteutus
+
+Voit jatkaa edellisessä tehtävissä aloitettua React + Vite ‑projektia, johon lisätään on
+Cloudflare Web Analytics ja analytiikan käytöstä kertova dialogibanneri. Alla on esimerkki `ConsentBanner.tsx` -tieodostosta, jolla käyttäjältä voidaan kysyä saako tietoja kerätä:
+
+```ts
+// src/components/ConsentBanner.tsx
+function getConsent(): boolean | null {
+  const value = localStorage.getItem('consent');
+  if (value === null) return null;
+  return value === "true";
+}
+
+function setConsent(value: boolean) {
+  localStorage.setItem('consent', value.toString());
+}
+
+export default function ConsentBanner() {
+  if (getConsent() !== null) return null;
+
+  const acceptAnalytics = () => {
+    setConsent(true);
+    window.location.reload();
+  };
+
+  const declineAnalytics = () => {
+    setConsent(false);
+    window.location.reload();
+  };
+
+  return (
+    <div
+      style={{
+        position: "fixed",
+        bottom: 0,
+        left: 0,
+        right: 0,
+        padding: "1rem",
+        backgroundColor: "#f5f5f5",
+        borderTop: "1px solid #ccc",
+        zIndex: 1000,
+      }}
+    >
+      <p style={{ marginBottom: "0.5rem" }}>
+        Tämä sovellus käyttää anonyymia analytiikkaa
+        sovelluksen teknisen toimivuuden ja käytettävyyden
+        arviointiin.
+      </p>
+
+      <button onClick={acceptAnalytics} style={{ marginRight: "0.5rem" }}>
+        Hyväksy analytiikka
+      </button>
+
+      <button onClick={declineAnalytics}>
+        Hylkää
+      </button>
+    </div>
+  );
+}
+```
+
+6.2. Cloudflare Web Analytics (JS beacon)
+
+- Lue [ohjeet Clouflare tunnuksen](https://developers.cloudflare.com/fundamentals/account/create-account/) tekemiseksi
+- Luo Cloudflare‑tili osoitteessa [https://dash.cloudflare.com/sign-up](https://dash.cloudflare.com/sign-up)
+- Kirjaudu tunnuksilla Cloudflaren palveluun
+- Lisää analytiikkasivusto kohdasta “Web analytics” → “Add a site”
+- Lisää JavaScript beacon omaan React + Vite ‑sovelluksen `index.html` -tiedostoon, joka on projektin juuressa
+
+`react-router-dom` on React‑sovelluksissa käytettävä kirjasto, jonka pääkäyttötarkoitus on hallita navigaatiota ja URL‑pohjaista reititystä yksisivuisissa sovelluksissa (SPA, Single Page Application). Tällä hetkellä React + Vite -sovellus ei käytä sitä, koska se on kooltaan vielä pieni. Jos haluat Web analytiikan toimivan routerin kanssa, tulisi tehdä seuraavat muutokset.
+6.2.1. Lisää `/types/global.d.ts` -tiedostoon:
+
+```ts
+export {};
+
+declare global {
+  interface Window {
+    _cfq?: any[];
+  }
+}
+```
+
+6.2.2. Lisää `App.tsx` -tiedostoon:
+
+```ts
+import { useState, useEffect, useRef, useCallback } from 'react';
+import { useLocation } from 'react-router-dom'; // Tämä voin jos käyttä router:ia
+
+...
+function RouteAnalytics() {
+  // const location = useLocation(); // Tämä voin jos käyttä router:ia
+  const { trackEvent } = useCloudflareAnalytics();  
+  const initialReferrer = useRef<string>(
+    document.referrer || "direct"
+  );
+
+  useEffect(() => {
+    trackEvent("page_view", {
+      referrer: initialReferrer.current,
+      landingPath: window.location.pathname,
+      //path: location.pathname
+    });
+  }, [trackEvent]);
+
+  return null;
+}
+```
+
+6.2.3. Tämän voi laittaa joko omaan `/hooks/useCloudflareAnalytics.ts` -tiedostoon tai alkuun `App.tsx` -tiedostoon:
+
+```ts
+function useCloudflareAnalytics() {
+  const trackEvent = useCallback(
+    (eventName: string, data?: Record<string, any>) => {
+      // if (!getConsent()) return; // Jos haluaa tarkistaa 6.1 kohdan consentin
+      if (!window._cfq) {
+        window._cfq = [];
+      }
+
+      window._cfq.push([
+        "trackEvent",
+        {
+          name: eventName,
+          ...data,
+          timestamp: new Date().toISOString(),
+        },
+      ]);
+    },
+    []
+  );
+
+  return { trackEvent };
+}
+```
+
+6.3. Lyhyt teksti mihin seurantaa voisi hyödyntää
+
+Jos on olemassa viikon 6 linkki, tee linkin taakse uusi sivu jossa on lyhyt teksti (150 sanaa) mihin seurantaa voisi hyödyntää. Sekä kuvaile miten CORS-ongelman voisi välttää. Jos jostain syystä tekstiä ei saa vietyä GitHub Pages -sivustolle, laita se suoraan Teams-kanavalle.
+
+# 🎓 **Palautettava materiaali**
+
+Palautuksena tehtävästä on Teams-kanavalle **GitHub-repositorion linkki** ja **GitHub Pages -sivuston linkki**, jossa on Vite-sovellus toimivana
