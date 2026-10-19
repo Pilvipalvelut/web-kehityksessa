@@ -22,7 +22,7 @@ Tarkemmat ohjeet AHOT-käytäntöjen suhteen löydät [täältä](https://github
 
 # Kurssin aikataulu (syksy 2026)
 
-Kurssista järjestetään syksyllä 2026 toteutus. Toteutuksen DIG001AS3A-3006 yhteiset tapaamiset järjestetään viikoittain seuraavasti:
+Kurssista järjestetään syksyllä 2026 toteutus. Toteutuksen DIG001AS3A-3007 yhteiset tapaamiset järjestetään viikoittain seuraavasti:
 
 2. periodi **keskiviikkoisin klo 17:40-20:30** Teams:issa.
 
