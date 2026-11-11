@@ -336,7 +336,7 @@ npm run dev
 
 4.4. Firebase‑kirjastojen asentaminen
 
-Reactissa käytetään Firebase **SDK:ta**, uusin on versio 12. Aja komentorivillä projektin juurikansiossa:
+Reactissa käytetään Firebase **SDK:ta**, uusin on versio 13. Aja komentorivillä projektin juurikansiossa:
 
 ```bash
 npm install firebase
