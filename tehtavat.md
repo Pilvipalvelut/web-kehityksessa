@@ -897,7 +897,7 @@ export default App
 
 `src/components/QuizForm.tsx` – arvauslomake:
 *   sisältää lomakkeen hinnan arvaamiseen
-*   käyttää `useState` vain paikalliseen inputtiin
+*   käyttää omaa `useState` propsia vain paikallisesti
 *   tuotteen tiedot, kuten tuoteen nimi ja kuva
 
 Puuttuu:
