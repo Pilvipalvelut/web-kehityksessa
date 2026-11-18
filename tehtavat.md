@@ -603,8 +603,14 @@ import { auth, logout } from './authService';
 import { onAuthStateChanged, type User } from 'firebase/auth';
 import { getOrCreateCodename } from './codenameService';
 import { QuizForm } from './components/QuizForm';
-import { createSession } from './gameSessionService';
-import { resolveRound } from './gameController';
+import { createSession, joinSession } from './gameSessionService';
+import {
+  resetGame,
+  submitGuess,
+  startGameIfPossible,
+  clearPlayers,
+  nextRound
+} from './gameController';
 import { type Session } from './types/Session';
 
 function App() {
@@ -621,13 +627,32 @@ function App() {
     }
 
     const unsubscribe = onAuthStateChanged(auth, async (firebaseUser) => {
-      setUser(firebaseUser);
-      const name = getOrCreateCodename(firebaseUser!.uid);
-      setCodename(name);
-      setSession(await createSession({ name: name + "n-arvaussessio", creatorName: name }));
+      if (!firebaseUser) {
+        setCodename("");
+        setSession(null);
+        return;
+      }
+      setSession(await createSession());
+
+      try {
+        setUser(firebaseUser);
+        const name = getOrCreateCodename(firebaseUser.uid);
+        setCodename(name);
+
+        if (session != null && session.status === "waiting") {
+          await joinSession({
+            uid: firebaseUser.uid,
+            codename: name,
+            score: 0,
+            guess: null,
+          });
+        }        
+      } catch (err) {
+        console.error("Peliin liittyminen epäonnistui:", err);
+      }
     });
 
-    return () => unsubscribe();   
+    return () => unsubscribe();
   }, [])
 
   const handleClick = () => {
@@ -638,13 +663,49 @@ function App() {
     })
   }
 
-  function submitGuess(guess: number): void {
-    if ( session ) {
-      try {
-        resolveRound(session, guess);
-      } catch (error) {
-        console.error("Kierroksen luonti epäonnistui: ", error);
-      }  
+  async function handleStartGame() {
+    if (!session) return;
+
+    try {
+      await startGameIfPossible(session);
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
+  async function handleClearPlayers() {
+    if (!confirm("Poistetaanko kaikki pelaajat?")) return;
+
+    try {
+      await clearPlayers();
+    } catch (err) {
+      console.error("Clear players failed:", err);
+    }
+  }
+
+  async function handleSubmitGuess(guess: number) {
+    if (!user) return;
+
+    try {
+      await submitGuess(user.uid, guess);
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
+  async function handleNextRound() {
+    try {
+      await nextRound();
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
+  async function handleResetGame() {
+    try {
+      await resetGame();
+    } catch (err) {
+      console.error("Reset failed:", err);
     }
   }
 
@@ -671,7 +732,7 @@ function App() {
         <div>
           {user ? (
             <>
-              <p>👋 Tervetuloa, {codename}</p>
+              <p>👋 Tervetuloa, <strong>{codename}</strong></p>
               <button onClick={logout}>Kirjaudu ulos</button>
             </>
           ) : (
@@ -680,11 +741,64 @@ function App() {
         </div>
 
         <div>
-          <QuizForm 
-            onSubmitGuess={(guess) => submitGuess(guess)} 
-            players={[]} 
-            currentUserId={codename}
-          />
+          {!session ? (
+            <p>Ladataan pelisessiota...</p>
+          ) : (
+            <>
+              <h2>Pelisessio: {session.sessionName}</h2>
+              <p>Tila: {session.status}</p>
+              <p>Kierros: {session.currentRound} / {session.maxRounds}</p>
+
+              <h3>Pelaajat</h3>
+              <ul>
+                {session.players.map((player) => (
+                  <li key={player.uid}>
+                    {player.codename} — pisteet: {player.score}
+                  </li>
+                ))}
+              </ul>
+
+              {session.status === "waiting" && (
+                <>
+                  <p>
+                    Odotetaan pelaajia. Peli alkaa, kun mukana on vähintään 2
+                    pelaajaa.
+                  </p>
+                  <button onClick={handleClearPlayers}>
+                    Tyhjennä pelaajat
+                  </button>
+                  <p>Pelaajia nyt: {session.players.length} / 4</p>
+                  <button
+                    type="button"
+                    onClick={handleStartGame}
+                    disabled={session.players.length < 2}
+                  >
+                    Aloita peli
+                  </button>
+                </>
+              )}
+
+              {session.status === "playing" && (
+                <QuizForm
+                    players={session.players}
+                    currentUserId={user!.uid}
+                    onSubmitGuess={handleSubmitGuess} 
+                    currentProduct={session.currentProduct} 
+                    correctPrice={session.correctPrice} 
+                    onNextRound={handleNextRound} />
+              )}
+
+              {session.status === "finished" && (
+                <div>
+                  <h2>Peli päättyi</h2>
+                  <p>Voittaja: {session.winnerCodename}</p>
+                  <button onClick={handleResetGame}>
+                    Aloita alusta
+                  </button>
+                </div>
+              )}
+            </>
+          )}
         </div>
       </section>
 
@@ -792,59 +906,89 @@ Puuttuu:
 *   pelin vaiheiden selkeä käsittely (`playing` vs `finished`)
 
 ```ts
-import { useState } from 'react';
-import { type Player } from '../types/Player';
-import { RoundResult} from './RoundResult';
+import { useState } from "react";
+import { type Player } from "../types/Player";
+import { type Product } from "../types/Product";
+import { RoundResult } from "./RoundResult";
 
 
-interface QuizFormProps {
+type QuizFormProps = {
   players: Player[];
   currentUserId: string;
-  correctPrice?: number;        // olemassa vain tulosvaiheessa
+  currentProduct: Product | null;
+  correctPrice: number | null;
   onSubmitGuess: (guess: number) => void;
-}
+  onNextRound: () => void;
+};
 
 export function QuizForm({
   players,
   currentUserId,
+  currentProduct,
   correctPrice,
-  onSubmitGuess
-}: QuizFormProps ) {
-    
+  onSubmitGuess,
+  onNextRound,
+}: QuizFormProps) {
   const [guess, setGuess] = useState("");
 
-  if (correctPrice !== undefined) {
+  const currentPlayer = players.find((player) => player.uid === currentUserId);
+  const hasGuessed = Boolean(currentPlayer && currentPlayer.guess !== null);
+
+  if (!currentProduct) {
+    return <p>Odotetaan tuotetta...</p>;
+  }
+
+  if (correctPrice !== null) {
     return (
       <RoundResult
         players={players}
         correctPrice={correctPrice}
+        onNextRound={onNextRound}
       />
     );
   }
 
+  return (
+    <div className="quiz-card">
+      <h2>Arvaa tuotteen hinta</h2>
+      <p>
+        Tuote: <strong>{currentProduct.title}</strong>
+      </p>
 
-    return (
-        <><p>Arvattavan tuotteen nimi: </p>
+      {currentProduct.thumbnail && (
+        <img
+          src={currentProduct.thumbnail}
+          alt={currentProduct.title}
+          width="160"
+        />
+      )}
+
+      {hasGuessed ? (
+        <p>Olet jo arvannut: {currentPlayer?.guess} €</p>
+      ) : (
         <form
-            onSubmit={e => {
-                e.preventDefault();
-                onSubmitGuess(Number(guess));
-            } }
+          onSubmit={(event) => {
+            event.preventDefault();
+            onSubmitGuess(Number(guess));
+            setGuess("");
+          }}
         >
+          <input
+            type="number"
+            min="0"
+            step="0.01"
+            value={guess}
+            onChange={(event) => setGuess(event.target.value)}
+            placeholder="Arvaa hinta (€)"
+            required
+          />
 
-            <input
-                type="number"
-                value={guess}
-                onChange={e => setGuess(e.target.value)}
-                placeholder="Arvaa hinta (€)"
-                required />
-
-            <button>Arvaa hinta {currentUserId}</button>
-        </form></>
-    );
+          <button type="submit">Lähetä arvaus</button>
+        </form>
+      )}
+    </div>
+  );
 }
-
-export default QuizForm;
 ```
 
 `src/components/RoundResult.tsx` – kierroksen tulos näyttää:
@@ -857,27 +1001,40 @@ export default QuizForm;
 ```ts
 import { type Player } from "../types/Player";
 
+type RoundResultProps = {
+  players: Player[];
+  correctPrice: number;
+  onNextRound: () => void;
+};
+
 export function RoundResult({
   players,
   correctPrice,
-}: {
-  players: Player[];
-  correctPrice: number;
-}) {
-  return (
-    <div>
-      <h3>Kierroksen tulos</h3>
+  onNextRound,
+}: RoundResultProps) {
+  const sortedPlayers = [...players].sort((a, b) => {
+    const aDiff = Math.abs((a.guess ?? 0) - correctPrice);
+    const bDiff = Math.abs((b.guess ?? 0) - correctPrice);
+    return aDiff - bDiff;
+  });
 
-      <p>Oikea hinta: {correctPrice} €</p>
+  return (
+    <div className="result-card">
+      <h2>Kierroksen tulos</h2>
+
+      <p>Oikea hinta: <strong>{correctPrice} €</strong></p>
 
       <ul>
-        {players.map(p => (
-          <li key={p.id}>
-            {p.codename}: {p.guess} €
-            (ero {Math.abs(p.guess! - correctPrice)} €)
+        {sortedPlayers.map((player) => (
+          <li key={player.uid}>
+            {player.codename}: {player.guess} € — ero{" "}
+            {Math.abs((player.guess ?? 0) - correctPrice)} € — pisteet{" "}
+            {player.score}
           </li>
         ))}
       </ul>
+
+      <button onClick={onNextRound}>Seuraava kierros</button>
     </div>
   );
 }
@@ -888,7 +1045,8 @@ export function RoundResult({
 👉 Luo TypeScript‑tyypit:
 
 *   `Player`
-*   `Game` tai `Session`
+*   `Session`
+*   `Product`
 
 Vähimmäisvaatimukset:
 
@@ -898,7 +1056,7 @@ Player:
 - score
 - guess
 
-Game / Session:
+Session:
 - status ("waiting" | "playing" | "finished")
 - players: Player[]
 - currentRound
