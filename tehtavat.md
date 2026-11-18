@@ -653,7 +653,7 @@ function App() {
     });
 
     return () => unsubscribe();
-  }, [])
+  }, [session])
 
   const handleClick = () => {
     setCount((count) => {
