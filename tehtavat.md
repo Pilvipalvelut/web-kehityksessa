@@ -1067,7 +1067,7 @@ Firestore EI salli `undefined`‑arvoja – huomioi tämä tietomallissa.
 
 5.2. Firestore‑integraatio
 
-Toteuta Firestore‑logiikka erillisiin tiedostoihin (ei React‑komponentteihin):
+Toteuta Firestore‑tiedonvarastointi:
 
 *   ✅ pelin luonti
 *   ✅ pelin tallennus
@@ -1080,7 +1080,8 @@ Vaatimus:
 
 5.3. Pelin elinkaaren hallinta
 
-Rakenna peli vaiheisiin:
+Pelissä voisi olla alkuun vain 3 pelikierrosta, jotta testaaminen on helpompaa.
+Pelin tilat ovat:
 
 1.  **Waiting**
     *   pelaajat liittyvät
@@ -1093,10 +1094,8 @@ Rakenna peli vaiheisiin:
 3.  **Finished**
     *   voittaja näytetään
 
-📌 Tämä voidaan toteuttaa:
+📌 Tämä voidaan toteuttaa `status`‑kentällä esimerkiksi seuraavasti:
 
-*   `status`‑kentällä
-*   tai yksinkertaisella tilakoneella
 ```ts
 export type SessionStatus = "waiting" | "playing" | "finished";
 
@@ -1135,7 +1134,7 @@ async function fetchRandomProduct() {
 Vaatimukset:
 
 *   tuotteen hintaa ei näytetä ennen kierroksen ratkaisua
-*   hinta tallennetaan Firestoreen
+*   hinta ja kierroksen tulos tallennetaan Firestoreen
 
 
 5.5. Pisteytys
@@ -1150,8 +1149,8 @@ Esimerkiksi:
 | `App.tsx`           | Orkestroi auth + nykyinen peli |
 | `QuizForm`          | Arvausvaihe                    |
 | `RoundResult`       | Kierroksen tulos               |
-| Firestore‑tiedostot | Pelilogiikka                   |
-| Custom hookit       | Reaaliaikaisuus                |
+| `gameController`    | Pelilogiikka                   |
+| React hookit        | Reaaliaikaisuus                |
 
 # 🎓 **Palautettava materiaali**
 
