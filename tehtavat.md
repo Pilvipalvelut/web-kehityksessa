@@ -577,21 +577,21 @@ Palautuksena tehtävästä on Teams-kanavalle **GitHub-repositorion linkki** ja 
 
 ### 5. Tehtävä Moninpelinä toimiva hintavisa (Vite + React + Firebase)
 Voit jatkaa edellisessä tehtävissä aloitettua React + Vite ‑projektia, jossa on
-Firebase Authentication (email + password)
-Lisänä tulisi peruskomponentit:
+Firebase Authentication (email + password).
+Uusina ominaisuuksina tulisi luoda komponentit, jotka sisältävät pelilogiikan. Esimerkiksi:
 *   QuizForm (arvaus)
-*   RoundResult (kierroksen tulos)
-*   App.tsx, joka yhdistää nämä
+*   RoundResult (näyttää kierroksen tuloksen)
+*   gameSessionService (Luo tai liittää pelaajan peliin)
+*   gameController (joka hoitaa pelikierrokset tai päättää pelin)
+*   App.tsx, joka yhdistää edelliset ja kutsuu funktioita
 
-Tehtäväsi on laajentaa tästä toimiva 2–4 pelaajan moninpeli, jossa arvataan tuotteiden hintoja.
+Tehtäväsi on rakentaa toimiva 2–4 pelaajan moninpeli, jossa arvataan tuotteiden hintoja.
 
 `src/App.tsx` – sovelluksen orkestroija:
-*   hoitaa **Firebase Authenticationin**
-*   luo **yksittäisen pelisession** (`createSession`)
-*   välittää funktiota `submitGuess`
+*   hoitaa **Firebase autentikoinnin**
 *   renderöi `QuizForm`‑komponentin
 
-📌 Tämä tiedosto on hyvä **lähtöpiste**.
+📌 Tässä on esimerkki, miltä `src/App.tsx` tiedosto voisi näyttää:
 ```ts
 import { useState, useEffect } from 'react'
 import reactLogo from './assets/react.svg'
