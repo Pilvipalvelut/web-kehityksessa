@@ -994,7 +994,7 @@ export function QuizForm({
 *   näyttää:
     *   oikean hinnan
     *   kaikkien pelaajien arvaukset ja erot
-*   se on puhdas presentaatio
+*   pyritty jakamaan pelitoiminnot omiin yksinkertaisiin komponentteihin
 *   ei Firestorea
 *   ei React‑statea
 ```ts
