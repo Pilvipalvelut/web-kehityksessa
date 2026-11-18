@@ -898,12 +898,11 @@ export default App
 `src/components/QuizForm.tsx` – arvauslomake:
 *   sisältää lomakkeen hinnan arvaamiseen
 *   käyttää `useState` vain paikalliseen inputtiin
-*   kutsuu `onSubmitGuess`
+*   tuotteen tiedot, kuten tuoteen nimi ja kuva
 
 Puuttuu:
 
-*   tuotteen tiedot (vain nimi, ei kuvaa)
-*   pelin vaiheiden selkeä käsittely (`playing` vs `finished`)
+*   tähän komponenttiin arvattava tuote tulee `currentProduct` ja hinta `correctPrice` muuttujissa
 
 ```ts
 import { useState } from "react";
