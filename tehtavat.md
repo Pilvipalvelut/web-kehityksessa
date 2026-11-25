@@ -1236,6 +1236,7 @@ export default function ConsentBanner() {
 - Lisää JavaScript beacon omaan React + Vite ‑sovelluksen `index.html` -tiedostoon, joka on projektin juuressa
 
 `react-router-dom` on React‑sovelluksissa käytettävä kirjasto, jonka pääkäyttötarkoitus on hallita navigaatiota ja URL‑pohjaista reititystä yksisivuisissa sovelluksissa (SPA, Single Page Application). Tällä hetkellä React + Vite -sovellus ei käytä sitä, koska se on kooltaan vielä pieni. Jos haluat Web analytiikan toimivan routerin kanssa, tulisi tehdä seuraavat muutokset.
+
 6.2.1. Lisää `/types/global.d.ts` -tiedostoon:
 
 ```ts
